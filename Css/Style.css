@@ -1,0 +1,160 @@
+/* =========================================
+   VARIABLES & GLOBAL STYLES
+   ========================================= */
+:root {
+  --font-heading: 'Georgia', serif; 
+  --font-body: 'Helvetica Neue', Arial, sans-serif;
+  --bg-light: #ffffff;
+  --bg-offwhite: #f7f7f7;
+  --bg-dark: #121212;
+  --bg-footer: #141414;
+  --text-main: #222222;
+  --text-light: #ffffff;
+  --border-color: #e0e0e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background: var(--bg-light);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; object-fit: cover; width: 100%; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section-spacing { padding: 80px 0; }
+.section-title { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 30px; font-weight: normal; }
+
+/* Buttons */
+.btn {
+  display: inline-block; padding: 12px 30px; border: 1px solid var(--text-main);
+  background: transparent; color: var(--text-main); text-transform: none;
+  font-size: 0.9rem; cursor: pointer; transition: 0.3s;
+}
+.btn:hover { background: var(--text-main); color: var(--bg-light); }
+.btn-solid-dark { background: var(--bg-dark); color: var(--text-light); border: 1px solid var(--bg-dark); }
+.btn-solid-dark:hover { background: #333; }
+.btn-solid-white { background: var(--bg-light); color: var(--bg-dark); border: none; padding: 12px 40px;}
+.btn-solid-white:hover { background: #e0e0e0; }
+.btn-outline-light { border-color: #444; color: var(--text-light); width: 100%; margin-top: 15px;}
+.btn-outline-light:hover { border-color: var(--text-light); background: #222;}
+.btn-transparent { border-color: var(--text-light); color: var(--text-light); }
+.btn-transparent:hover { background: var(--text-light); color: var(--text-main); }
+.center-btn-wrapper { text-align: center; margin-top: 40px; }
+
+/* =========================================
+   HEADER & TOP BAR
+   ========================================= */
+.top-bar { background: var(--bg-dark); color: var(--text-light); text-align: center; padding: 12px; font-size: 0.85rem; letter-spacing: 0.5px; }
+
+.header-main { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid var(--border-color); }
+.logo { font-family: var(--font-heading); font-size: 2.2rem; }
+
+.nav-links { display: flex; gap: 25px; list-style: none; font-size: 0.9rem; }
+.nav-links a:hover { text-decoration: underline; text-underline-offset: 6px; color: #666; }
+
+.header-icons { display: flex; gap: 20px; }
+.header-icons svg { width: 20px; height: 20px; cursor: pointer; }
+
+/* =========================================
+   HERO SECTION & DARK BANNER
+   ========================================= */
+.hero { position: relative; height: 60vh; background: #ddd; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero::before { content: ""; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: url('https://via.placeholder.com/800x600/ffb6c1/ffffff?text=Left+Image') center/cover; }
+.hero::after { content: ""; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: url('https://via.placeholder.com/800x600/add8e6/ffffff?text=Right+Image') center/cover; }
+
+.hero-content { position: relative; z-index: 2; color: var(--text-light); background: rgba(0,0,0,0.3); padding: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;}
+.hero-content h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 10px; font-weight: normal; }
+.hero-content p { margin-bottom: 30px; font-size: 1rem; }
+
+.dark-banner { background: var(--bg-dark); color: var(--text-light); text-align: center; padding: 40px 20px; font-family: var(--font-heading); font-size: 1.6rem; }
+
+/* =========================================
+   NEW PRODUCT ALERT (DARK SECTION)
+   ========================================= */
+.new-product-alert { background: var(--bg-dark); color: var(--text-light); padding: 80px 0; }
+.new-product-alert .subtitle { margin-bottom: 30px; font-size: 0.9rem; color: #ccc;}
+.new-product-alert .product-title { color: var(--text-light); margin-top: 15px;}
+.new-product-alert .product-price { color: #aaa; }
+
+/* =========================================
+   GRIDS & PRODUCT CARDS
+   ========================================= */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.product-card { position: relative; }
+.img-wrapper { position: relative; }
+.product-card img { aspect-ratio: 1/1; margin-bottom: 15px; background: var(--bg-offwhite); }
+.product-title { font-size: 1rem; font-weight: normal; margin-bottom: 5px; font-family: var(--font-heading); }
+.product-price { font-size: 0.85rem; color: #555; }
+
+.badge { position: absolute; bottom: 10px; left: 10px; color: var(--text-light); padding: 5px 12px; font-size: 0.75rem; border-radius: 2px; }
+.badge-sold-out { background: var(--bg-dark); }
+
+/* =========================================
+   ASYMMETRIC GRID (ARTSY & CCICCIBOORICCI)
+   ========================================= */
+.asymmetric-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+.asymmetric-left img { height: 100%; object-fit: cover; }
+.asymmetric-right { display: flex; flex-direction: column; gap: 20px; }
+.asymmetric-right .product-card img { aspect-ratio: 4/3; }
+
+@media (max-width: 768px) {
+  .asymmetric-grid, .grid-4, .grid-3 { grid-template-columns: 1fr; }
+  .hero::before, .hero::after { width: 100%; height: 50%; }
+  .hero::after { top: 50%; }
+}
+
+/* =========================================
+   FEATURED BANNER SLIDER
+   ========================================= */
+.featured-banner { position: relative; height: 50vh; background: url('https://via.placeholder.com/1600x600/8fbc8f/ffffff?text=Scrunchies+Background') center/cover; display: flex; align-items: center; justify-content: center; }
+.featured-banner-card { background: var(--bg-light); padding: 50px; text-align: center; width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.featured-banner-card h2 { font-family: var(--font-heading); margin-bottom: 15px; font-weight: normal; font-size: 1.8rem;}
+.featured-banner-card p { font-size: 0.9rem; margin-bottom: 25px; color: #555;}
+.pagination-dots { text-align: center; padding: 20px; font-size: 0.8rem; color: #888; }
+
+/* =========================================
+   REVIEWS SECTION
+   ========================================= */
+.reviews .grid-4 { gap: 15px; }
+.review-card { background: var(--bg-offwhite); padding: 40px 20px; text-align: center; }
+.review-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; }
+.review-title { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 15px; font-weight: normal;}
+.review-text { font-size: 0.9rem; font-style: italic; color: #555; margin-bottom: 15px; }
+.review-handle { font-size: 0.85rem; font-weight: bold; }
+
+@media (max-width: 900px) { .reviews .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+
+/* =========================================
+   VIDEO SECTION
+   ========================================= */
+.video-section { position: relative; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+.play-btn { position: absolute; background: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.play-btn::after { content: "▶"; font-size: 20px; color: var(--bg-dark); margin-left: 4px; }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer { background-color: var(--bg-footer); color: #e0e0e0; text-align: center; padding: 70px 20px 30px; font-family: var(--font-heading); }
+.site-footer h2 { font-size: 1.8rem; margin-bottom: 25px; font-weight: normal; color: #ffffff; }
+.site-footer p { font-size: 1rem; margin-bottom: 10px; color: #cccccc; }
+.footer-promo { margin: 40px 0 !important; }
+
+.social-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 50px; }
+.social-icons svg { width: 20px; height: 20px; fill: #ffffff; cursor: pointer; transition: opacity 0.3s ease; }
+.social-icons svg:hover { opacity: 0.6; }
+
+.footer-bottom { border-top: 1px solid #2a2a2a; padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 15px; font-family: var(--font-body); font-size: 0.8rem; color: #888;}
+.paypal-icon { background: white; padding: 6px 12px; border-radius: 4px; display: flex; align-items: center; justify-content: center;}
+
+/* =========================================
+   MOCK CHAT BUTTON
+   ========================================= */
+.chat-btn { position: fixed; bottom: 30px; right: 30px; background: #eab308; color: var(--bg-dark); padding: 12px 24px; border-radius: 30px; font-weight: bold; display: flex; align-items: center; gap: 8px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+.chat-btn .badge { background: #ef4444; color: white; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 10px; position: absolute; top: -5px; right: 0; }
