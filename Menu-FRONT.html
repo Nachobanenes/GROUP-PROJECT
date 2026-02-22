@@ -4,186 +4,379 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aci Girl Boutique</title>
-  
-    <link rel="stylesheet" href="Css/Style.css">
+  <link rel="stylesheet" href="Css/Style.css">
 </head>
 <body>
 
   <div class="top-bar">Tag/Follow @acigirlboutique on facebook, instagram, & tiktok</div>
 
-  <header class="header-main">
-    <div class="logo">Aci Girl Boutique</div>
+  <header class="header-main" id="mainHeader">
+    <div class="logo"><a href="Menu-FRONT.html" style="text-decoration: none; color: inherit;">Aci Girl Boutique</a></div>
     <ul class="nav-links">
-      <li><a href="#">Home</a></li>
+      <li><a href="Menu-FRONT.html">Home</a></li>
       <li><a href="#">Scrunchies</a></li>
       <li><a href="#">CCICCIBOORICCI</a></li>
       <li><a href="#">Chloe's Version</a></li>
       <li><a href="#">Collections</a></li>
       <li><a href="#">Contact</a></li>
     </ul>
-    <div class="header-icons">
+    
+    <div class="header-icons" style="position: relative;">
+      <svg id="searchBtn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+      
+      <div id="searchOverlay" class="search-overlay">
+        <input type="text" placeholder="Search products...">
+        <button id="closeSearchBtn">X</button>
+      </div>
 
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <a href="Cart.html" class="cart-icon-link" style="color: inherit;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span id="cartBadge" class="cart-badge">0</span>
+      </a>
     </div>
   </header>
 
-  <section class="hero">
+  <section class="hero reveal-on-scroll">
     <div class="hero-content">
-
       <h1>Aci Girl Boutique</h1>
       <p>Handmade Scrunchies, CCICCIBOORICCI Merch, & Handcrafted Accessories</p>
-      <button class="btn btn-transparent">SHOP NOW!</button>
+      <a href="#" class="btn btn-transparent add-to-cart">SHOP NOW!</a>
     </div>
   </section>
 
-  <div class="dark-banner">
+  <div class="dark-banner reveal-on-scroll">
     Handmade Scrunchies, Handcrafted Accessories, Customized Prints & Merch
   </div>
 
-  <section class="new-product-alert">
+  <section class="container section-spacing reveal-on-scroll">
+    <h2 class="section-title">Scrunchies for the Potterheads</h2>
+    
+    <div class="slider-wrapper">
+      <button class="slider-btn left-btn">&#10094;</button>
+      <div class="slider-container">
+        <div class="slider-track">
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesGiftSet_1.jpg?v=1667195832&width=360" alt="HP Mini Gift Set">
+                <span class="badge badge-sold-out">Sold out</span>
+              </div>
+              <h3 class="product-title">Harry Potter 6's Mini Scrunchies Gift Set</h3>
+              <p class="product-price">₱500.00 PHP</p>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesmadebyAciGirl_5_-Copy.jpg?v=1662451328&width=360" alt="Hedwig Blue">
+              </div>
+              <h3 class="product-title" style="text-decoration: underline;">Hedwig Blue | Harry Potter Scrunchies (XL)</h3>
+              <p class="product-price">₱350.00 PHP</p>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/products/HPCollection_15.jpg?v=1662349370&width=360" alt="Hogwarts">
+              </div>
+              <h3 class="product-title">Hogwarts | Harry Potter Scrunchies</h3>
+              <p class="product-price">₱150.00 PHP</p>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchies_5.jpg?v=1662451817&width=360" alt="Gryffindor">
+                <span class="badge badge-sold-out">Sold out</span>
+              </div>
+              <h3 class="product-title">Harry Potter Gryffindor Scrunchie</h3>
+              <p class="product-price">₱350.00 PHP</p>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesGiftSet_1.jpg?v=1667195832&width=360" alt="HP Mini Gift Set">
+                <span class="badge badge-sold-out">Sold out</span>
+              </div>
+              <h3 class="product-title">Harry Potter 6's Mini Scrunchies Gift Set</h3>
+              <p class="product-price">₱500.00 PHP</p>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn right-btn">&#10095;</button>
+    </div>
+
+    <div class="center-btn-wrapper">
+      <a href="#" class="btn btn-solid-dark">View all</a>
+    </div>
+  </section>
+
+  <section class="new-product-alert reveal-on-scroll">
     <div class="container">
       <h2 class="section-title">New Product Alert!</h2>
       <p class="subtitle">Handcrafted Orchid HairClip</p>
-      
       <div class="grid-3">
-        <div class="product-card">
-          <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesmadebyAciGirl_5_-Copy.jpg?v=1662451328&width=533" alt="Orchid Clip 1">
-          <h3 class="product-title">Orchid Clip Coll.1</h3>
-          <p class="product-price">₱100.00 PHP</p>
-          <button class="btn btn-outline-light">Choose options</button>
+        <div class="product-card swap-on-hover">
+          <a href="#" class="clickable-card">
+            <div class="img-wrapper">
+              <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/7C8CE7DD-D3BC-41AC-A483-F33DB2866754.jpg?v=1753884835&width=360" alt="Orchid Clip 1">
+              <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/C416296C-02F7-46CF-9B2F-22038E4F9B57.png?v=1753884835&width=360" alt="Orchid Clip 1 Hover">
+            </div>
+            <h3 class="product-title">Orchid Clip Coll.1</h3>
+            <p class="product-price">₱100.00 PHP</p>
+          </a>
+          <a href="#" class="btn btn-outline-light add-to-cart">Choose options</a>
         </div>
-        <div class="product-card">
-          <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesGiftSet_1.jpg?v=1667195832&width=360" alt="Orchid Clip 2">
-          <h3 class="product-title">Orchid Clip Coll.2</h3>
-          <p class="product-price">₱150.00 PHP</p>
-          <button class="btn btn-outline-light">Choose options</button>
+        <div class="product-card swap-on-hover">
+          <a href="#" class="clickable-card">
+            <div class="img-wrapper">
+              <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/F37DD7EF-99D6-47F7-9C91-961DF7C57B47.jpg?v=1746025953&width=360" alt="Orchid Clip 2">
+              <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/9EA66B3C-816B-4FF8-8A14-E06F9024247F.jpg?v=1746026150&width=360" alt="Orchid Clip 2 Hover">
+            </div>
+            <h3 class="product-title">Orchid Clip Coll.2</h3>
+            <p class="product-price">₱150.00 PHP</p>
+          </a>
+          <a href="#" class="btn btn-outline-light add-to-cart">Choose options</a>
         </div>
-        <div class="product-card">
-          <img src="https://via.placeholder.com/400x500/ffb6c1/ffffff?text=Orchid+Clip+3" alt="Orchid Clip 3">
-          <h3 class="product-title">Orchid HairClip Coll.3</h3>
-          <p class="product-price">₱100.00 PHP</p>
-          <button class="btn btn-outline-light">Choose options</button>
+        <div class="product-card swap-on-hover">
+          <a href="#" class="clickable-card">
+            <div class="img-wrapper">
+              <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/FD4E5938-9808-4351-9240-3A1E86668AB3.jpg?v=1741853848&width=360" alt="Orchid Clip 3">
+              <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/IMG_6247.jpg?v=1741930962&width=360" alt="Orchid Clip 3 Hover">
+            </div>
+            <h3 class="product-title">Orchid HairClip Coll.3</h3>
+            <p class="product-price">₱100.00 PHP</p>
+          </a>
+          <a href="#" class="btn btn-outline-light add-to-cart">Choose options</a>
         </div>
       </div>
       <div class="center-btn-wrapper">
-        <button class="btn btn-solid-white">View all</button>
+        <a href="#" class="btn btn-solid-white">View all</a>
       </div>
     </div>
   </section>
 
-  <section class="container section-spacing">
-    <h2 class="section-title">Scrunchies for the Potterheads</h2>
-    <div class="grid-4">
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesGiftSet_1.jpg?v=1667195832&width=360" alt="HP Mini Gift Set">
-          
-        </div>
-        <h3 class="product-title">Harry Potter 6's Mini Scrunchies Gift Set</h3>
-        <p class="product-price">₱500.00 PHP</p>
-      </div>
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesmadebyAciGirl_5_-Copy.jpg?v=1662451328&width=360" alt="Hedwig Blue">
-        </div>
-        <h3 class="product-title" style="text-decoration: underline;">Hedwig Blue | Harry Potter Scrunchies (XL)</h3>
-        <p class="product-price">₱350.00 PHP</p>
-      </div>
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img src="https://acigirlboutique.com/cdn/shop/products/HPCollection_15.jpg?v=1662349370&width=360" alt="Hogwarts">
-        </div>
-        <h3 class="product-title">Hogwarts | Harry Potter Scrunchies</h3>
-        <p class="product-price">₱150.00 PHP</p>
-      </div>
-      <div class="product-card">
-        <div class="img-wrapper">
-          <img src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchies_5.jpg?v=1662451817&width=360" alt="Gryffindor">
-          <span class="badge badge-sold-out">Sold out</span>
-        </div>
-        <h3 class="product-title">Harry Potter Gryffindor Scrunchie</h3>
-        <p class="product-price">₱350.00 PHP</p>
-      </div>
-    </div>
-    <div class="center-btn-wrapper">
-      <button class="btn btn-solid-dark">View all</button>
-    </div>
-  </section>
-
-  <section class="container section-spacing">
+  <section class="container section-spacing reveal-on-scroll">
     <h2 class="section-title">Artsy/Beady Collection</h2>
     <div class="asymmetric-grid">
       <div class="asymmetric-left">
-        <img src="https://via.placeholder.com/800x1000/eeeeee/000000?text=Beads+Main+Display" alt="Beads Main Display">
+        <a href="#" class="clickable-card" style="height: 100%; display: block;">
+          <div class="img-wrapper" style="height: 100%;">
+            <img src="https://acigirlboutique.com/cdn/shop/collections/FB36887A-96D7-4B09-BC43-A9A4F29873F6.jpg?v=1729667027&width=750" alt="Beads Main Display">
+          </div>
+        </a>
       </div>
       <div class="asymmetric-right">
         <div class="product-card">
-          <img src="https://via.placeholder.com/600x450/eeeeee/000000?text=Cranium+Bracelet" alt="Cranium Bracelet">
-          <h3 class="product-title">Cranium Cutie Charm Bracelet</h3>
-          <p class="product-price">₱150.00 PHP</p>
+          <a href="#" class="clickable-card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="img-wrapper" style="flex: 1;">
+              <img src="https://acigirlboutique.com/cdn/shop/files/A7900E06-D8BD-4E43-A8AD-AF32C6FDDDB0.jpg?v=1729668600&width=360" alt="Cranium Bracelet">
+            </div>
+            <h3 class="product-title">Cranium Cutie Charm Bracelet</h3>
+            <p class="product-price">₱150.00 PHP</p>
+          </a>
         </div>
         <div class="product-card">
-          <img src="https://via.placeholder.com/600x450/eeeeee/000000?text=Other+Bracelet" alt="Other Bracelet">
+          <a href="#" class="clickable-card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="img-wrapper" style="flex: 1; margin-bottom: 0;">
+              <img src="https://acigirlboutique.com/cdn/shop/files/BB670417-655F-4136-87E1-ABF55DD63F1D.png?v=1729874019&width=360" alt="Other Bracelet">
+            </div>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="container section-spacing">
+  <section class="container section-spacing reveal-on-scroll">
     <h2 class="section-title">CCICCIBOORICCI</h2>
     <div class="asymmetric-grid">
       <div class="asymmetric-left">
-        <img src="https://via.placeholder.com/800x1000/cccccc/000000?text=CCICCIBOORICCI+Main" alt="Main Display">
+        <a href="#" class="clickable-card" style="height: 100%; display: block;">
+          <div class="img-wrapper" style="height: 100%;">
+            <img src="https://acigirlboutique.com/cdn/shop/collections/B0FDECAE-E0A3-4102-92B1-B1D2986C8088.jpg?v=1729074689&width=750" alt="Main Display">
+          </div>
+        </a>
       </div>
       <div class="asymmetric-right">
         <div class="product-card">
-          <img src="https://via.placeholder.com/600x450/eeeeee/000000?text=Mochi+Keychain" alt="Keychain">
-          <h3 class="product-title">CCICCIBOORICCI MOCHI PREMIUM KEYCHAIN</h3>
-          <p class="product-price">₱250.00 PHP</p>
+          <a href="#" class="clickable-card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="img-wrapper" style="flex: 1;">
+              <img src="https://acigirlboutique.com/cdn/shop/files/D150C7EA-AAB4-4C83-A57A-E33273CF4935.jpg?v=1729163393&width=360" alt="Keychain">
+            </div>
+            <h3 class="product-title">CCICCIBOORICCI MOCHI PREMIUM KEYCHAIN</h3>
+            <p class="product-price">₱250.00 PHP</p>
+          </a>
         </div>
         <div class="product-card">
-          <img src="https://via.placeholder.com/600x450/eeeeee/000000?text=Cat+Stickers" alt="Stickers">
-          <h3 class="product-title">Cat Art Glitter Stickers</h3>
-          <p class="product-price">₱100.00 PHP</p>
+          <a href="#" class="clickable-card" style="height: 100%; display: flex; flex-direction: column;">
+            <div class="img-wrapper" style="flex: 1;">
+              <img src="https://acigirlboutique.com/cdn/shop/files/E79CDA1B-D717-424E-9D9E-736816BF6808.jpg?v=1729088083&width=360" alt="Stickers">
+            </div>
+            <h3 class="product-title">Cat Art Glitter Stickers</h3>
+            <p class="product-price">₱100.00 PHP</p>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="container section-spacing">
-    <h2 class="section-title">Our Scrunchie Collection</h2>
-    <div class="grid-4">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/400x400/d8bfd8/ffffff?text=Fluffy+Scrunchies" alt="Fluffy Scrunchies">
-        <h3 class="product-title">Fluffy Scrunchies &rarr;</h3>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/400x400/eedd82/ffffff?text=Sparkling+Scrunchies" alt="Sparkling Scrunchies">
-        <h3 class="product-title">Sparkling &rarr;</h3>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/400x400/ff69b4/ffffff?text=Premium+Scrunchies" alt="Premium Scrunchies">
-        <h3 class="product-title">Premium Scrunchies &rarr;</h3>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/400x400/87ceeb/ffffff?text=Ricci+N+Chloes" alt="Ricci N Chloes">
-        <h3 class="product-title">Ricci N' Chloe's &rarr;</h3>
-      </div>
-    </div>
-  </section>
-
-  <section class="featured-banner">
+  <section class="featured-banner reveal-on-scroll">
     <div class="featured-banner-card">
       <h2>Aci Girl Boutique</h2>
       <p>Scrunchies made by Aci Girl</p>
-      <button class="btn btn-solid-dark">Check it out now!</button>
+      <a href="#" class="btn btn-solid-dark add-to-cart">Check it out now!</a>
     </div>
   </section>
   <div class="pagination-dots">&lt; 1 / 2 &gt;</div>
 
-  <section class="container section-spacing reviews">
+  <section class="new-product-alert section-spacing reveal-on-scroll">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center; font-size: 1.5rem;">CCICCIBOORICCI Cat Art Stickers</h2>
+      
+      <div class="slider-wrapper">
+        <button class="slider-btn left-btn">&#10094;</button>
+        <div class="slider-container">
+          <div class="slider-track">
+            <div class="product-card swap-on-hover slider-card">
+              <a href="#" class="clickable-card">
+                <div class="img-wrapper">
+                  <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/E79CDA1B-D717-424E-9D9E-736816BF6808.jpg?v=1729088083&width=360" alt="Sticker 1">
+                  <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/1AAD8847-B8D9-4E9C-943B-FD29B897B5C8.jpg?v=1729088090&width=360" alt="Sticker 1 Hover">
+                  <span class="badge badge-sold-out" style="background: red;">Sale</span>
+                </div>
+                <h3 class="product-title">CCICCIBOORICCI Meowy KittyMas Stickers</h3>
+                <p class="product-price"><span style="text-decoration: line-through;">₱60.00</span> ₱50.00 PHP</p>
+              </a>
+            </div>
+            <div class="product-card swap-on-hover slider-card">
+              <a href="#" class="clickable-card">
+                <div class="img-wrapper">
+                  <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/C3BD195F-1B18-4E5B-9C27-2EDD38F00D4D.jpg?v=1729075283&width=360" alt="Sticker 2">
+                  <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/C7925893-19D3-4CDF-BE66-E3A8CD228457.jpg?v=1729075293&width=360" alt="Sticker 2 Hover">
+                  <span class="badge badge-sold-out" style="background: red;">Sale</span>
+                </div>
+                <h3 class="product-title">CCICCIBOORICCI Cat Art Glitter Stickers XL</h3>
+                <p class="product-price"><span style="text-decoration: line-through;">₱100.00</span> ₱60.00 PHP</p>
+              </a>
+            </div>
+            <div class="product-card swap-on-hover slider-card">
+              <a href="#" class="clickable-card">
+                <div class="img-wrapper">
+                  <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/7048C775-86BB-44A2-8FB0-5A2CE394ECAD.jpg?v=1729177988&width=360" alt="Sticker 3">
+                  <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/28B09D33-0A7D-4159-8F4C-5AFDEC97468A.jpg?v=1729177989&width=360" alt="Sticker 3 Hover">
+                </div>
+                <h3 class="product-title">CCICCIBOORICCI CCV Stickers</h3>
+                <p class="product-price">₱50.00 PHP</p>
+              </a>
+            </div>
+            <div class="product-card swap-on-hover slider-card">
+              <a href="#" class="clickable-card">
+                <div class="img-wrapper">
+                  <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/1C7506D4-E2C7-4558-83A2-88633B18F0B4.jpg?v=1729090242&width=360" alt="Sticker 4">
+                  <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/861A83CA-D45C-4F04-A8D7-85F7B64DEB52.jpg?v=1729090242&width=360" alt="Sticker 4 Hover">
+                  <span class="badge badge-sold-out" style="background: red;">Sale</span>
+                </div>
+                <h3 class="product-title">CCICCIBOORICCI Mini Sticker Sheet</h3>
+                <p class="product-price"><span style="text-decoration: line-through;">₱100.00</span> ₱50.00 PHP</p>
+              </a>
+            </div>
+            <div class="product-card swap-on-hover slider-card">
+              <a href="#" class="clickable-card">
+                <div class="img-wrapper">
+                  <img class="img-main" src="https://acigirlboutique.com/cdn/shop/files/E79CDA1B-D717-424E-9D9E-736816BF6808.jpg?v=1729088083&width=360" alt="Sticker 1">
+                  <img class="img-hover" src="https://acigirlboutique.com/cdn/shop/files/1AAD8847-B8D9-4E9C-943B-FD29B897B5C8.jpg?v=1729088090&width=360" alt="Sticker 1 Hover">
+                  <span class="badge badge-sold-out" style="background: red;">Sale</span>
+                </div>
+                <h3 class="product-title">CCICCIBOORICCI Meowy KittyMas Stickers</h3>
+                <p class="product-price"><span style="text-decoration: line-through;">₱60.00</span> ₱50.00 PHP</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <button class="slider-btn right-btn">&#10095;</button>
+      </div>
+
+      <div class="center-btn-wrapper">
+        <a href="#" class="btn btn-solid-white">View all</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-spacing reveal-on-scroll">
+    <h2 class="section-title">Our Scrunchie Collection</h2>
+    
+    <div class="slider-wrapper">
+      <button class="slider-btn left-btn">&#10094;</button>
+      <div class="slider-container">
+        <div class="slider-track">
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/collections/Classic_Scrunchies_Maxi_10.jpg?v=1660464600&width=535" alt="Fluffy Scrunchies">
+              </div>
+              <h3 class="product-title">Fluffy Scrunchies &rarr;</h3>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/collections/Sparkling_Scrunchies_Collection_by_Aci_Girl_6.jpg?v=1674535474&width=535" alt="Sparkling Scrunchies">
+              </div>
+              <h3 class="product-title">Sparkling &rarr;</h3>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/collections/20220513_184718.jpg?v=1660460879&width=535" alt="Premium Scrunchies">
+              </div>
+              <h3 class="product-title">Premium Scrunchies &rarr;</h3>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/collections/Scrunchies_made_by_Chloe.jpg?v=1660629917&width=535" alt="Ricci N Chloes">
+              </div>
+              <h3 class="product-title">Ricci N' Chloe's &rarr;</h3>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/collections/classic_scrunchies_1.jpg?v=1660622303&width=535" alt="Classic Silk">
+              </div>
+              <h3 class="product-title">Classic Silk &rarr;</h3>
+            </a>
+          </div>
+          <div class="product-card slider-card">
+            <a href="#" class="clickable-card">
+              <div class="img-wrapper">
+                <img src="https://acigirlboutique.com/cdn/shop/collections/Classic_Scrunchies_Maxi_10.jpg?v=1660464600&width=535" alt="Fluffy Scrunchies">
+              </div>
+              <h3 class="product-title">Fluffy Scrunchies &rarr;</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn right-btn">&#10095;</button>
+    </div>
+  </section>
+
+  <section class="newsletter-section section-spacing reveal-on-scroll">
+    <div class="container" style="text-align: center; max-width: 600px;">
+      <h2 class="section-title" style="margin-bottom: 10px;">Stay in the loop, sign up for our emails!</h2>
+      <p style="font-size: 0.9rem; color: #555;">Be the first to know about new merchandise, promos, and what we're up to!</p>
+      <div style="margin-top: 25px; display: flex; justify-content: center; gap: 5px;">
+        <input type="email" placeholder="Email" style="padding: 12px; width: 70%; border: 1px solid #ccc;">
+        <button class="btn btn-solid-dark" style="padding: 12px 20px;">&rarr;</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-spacing reviews reveal-on-scroll">
     <h2 class="section-title">REVIEWS</h2>
     <div class="grid-4">
       <div class="review-card">
@@ -237,24 +430,23 @@
     </div>
   </section>
 
-  <section class="container section-spacing">
-    <div class="video-section">
-      <img src="https://via.placeholder.com/1200x600/555555/ffffff?text=Video+Thumbnail" alt="Video">
-      <div class="play-btn"></div>
+  <section class="container section-spacing reveal-on-scroll">
+    <div class="video-responsive">
+      <iframe src="https://www.youtube.com/embed/nQ71VL4o7RM?si=Uwi8PPpfpV7kY0Aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
   </section>
 
-  <footer class="site-footer">
+  <footer class="site-footer reveal-on-scroll">
     <h2>Aci Girl Boutique x HUB: Make Lab</h2>
     <p>Store Hours: Mon-Thu: 10am-6pm & Fri-Sun: 10am-7pm</p>
     <p>Space01 HUB Make Lab, First United Bldg. 413 Escolta, Manila</p>
     <p class="footer-promo">Follow @acigirlboutique to get the latest updates, promos, & POP-UP Shopping Sched!</p>
 
     <div class="social-icons">
-      <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z"/></svg>
-      <svg viewBox="0 0 24 24"><path d="M21.582 6.186a2.67 2.67 0 00-1.884-1.898C17.962 3.8 12 3.8 12 3.8s-5.962 0-7.698.488a2.67 2.67 0 00-1.884 1.898C1.942 7.935 1.942 12 1.942 12s0 4.065.476 5.814a2.67 2.67 0 001.884 1.898c1.736.488 7.698.488 7.698.488s5.962 0 7.698-.488a2.67 2.67 0 001.884-1.898c.476-1.749.476-5.814.476-5.814s0-4.065-.476-5.814zM9.953 15.228V8.77l6.505 3.23-6.505 3.228z"/></svg>
+      <a href="https://www.facebook.com/acigirlboutique" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+      <a href="https://www.instagram.com/acigirlboutique" target="_blank"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://www.tiktok.com/@acigirlboutique" target="_blank"><svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1.04-.1z"/></svg></a>
+      <a href="https://www.youtube.com/acigirltv" target="_blank"><svg viewBox="0 0 24 24"><path d="M21.582 6.186a2.67 2.67 0 00-1.884-1.898C17.962 3.8 12 3.8 12 3.8s-5.962 0-7.698.488a2.67 2.67 0 00-1.884 1.898C1.942 7.935 1.942 12 1.942 12s0 4.065.476 5.814a2.67 2.67 0 001.884 1.898c1.736.488 7.698.488 7.698.488s5.962 0 7.698-.488a2.67 2.67 0 001.884-1.898c.476-1.749.476-5.814.476-5.814s0-4.065-.476-5.814zM9.953 15.228V8.77l6.505 3.23-6.505 3.228z"/></svg></a>
     </div>
 
     <div class="footer-bottom">
@@ -265,11 +457,34 @@
     </div>
   </footer>
 
-  <div class="chat-btn">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-    Chat
-    <span class="badge">1</span>
+  <div class="chat-widget" id="chatWidget">
+    <div class="chat-header">
+      <h4>Chat with us</h4>
+    </div>
+    <div class="chat-messages">
+      <div class="chat-bubble bot-message">
+        👋 Hayeeee! Please message us if you have questions, or give us an idea of what you're looking for. We're happy to make recommendations. Thanks so muchie!
+      </div>
+    </div>
+    <div class="chat-body">
+      <div class="chat-input-container">
+        <input type="text" placeholder="Write message">
+        <button class="send-btn">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="#a0a0a0"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+    </div>
   </div>
 
+  <button class="chat-btn" id="chatBtn">
+    <span class="chat-icon-wrapper" id="chatIconWrapper">
+      <svg class="chat-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      <span class="chat-text" id="chatText">Chat</span>
+    </span>
+  </button>
+
+  <div id="toastNotification" class="toast-notification">Item added to cart!</div>
+
+  <script src="Js/script.js"></script>
 </body>
 </html>

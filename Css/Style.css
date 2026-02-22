@@ -23,11 +23,12 @@ body {
 }
 
 a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; object-fit: cover; width: 100%; }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 .section-spacing { padding: 80px 0; }
 .section-title { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 30px; font-weight: normal; }
+
+.clickable-card { display: block; text-decoration: none; color: inherit; }
 
 /* Buttons */
 .btn {
@@ -42,101 +43,188 @@ img { max-width: 100%; display: block; object-fit: cover; width: 100%; }
 .btn-solid-white:hover { background: #e0e0e0; }
 .btn-outline-light { border-color: #444; color: var(--text-light); width: 100%; margin-top: 15px;}
 .btn-outline-light:hover { border-color: var(--text-light); background: #222;}
-.btn-transparent { border-color: var(--text-light); color: var(--text-light); }
+.btn-transparent { border-color: var(--text-light); color: var(--text-light); padding: 12px 40px; }
 .btn-transparent:hover { background: var(--text-light); color: var(--text-main); }
 .center-btn-wrapper { text-align: center; margin-top: 40px; }
 
 /* =========================================
-   HEADER & TOP BAR
+   HEADER & TOP BAR (STICKY HEADER ADDED)
    ========================================= */
 .top-bar { background: var(--bg-dark); color: var(--text-light); text-align: center; padding: 12px; font-size: 0.85rem; letter-spacing: 0.5px; }
 
-.header-main { display: flex; justify-content: space-between; align-items: center; padding: 25px 40px; border-bottom: 1px solid var(--border-color); }
-.logo { font-family: var(--font-heading); font-size: 2.2rem; }
+.header-main { 
+  display: flex; justify-content: space-between; align-items: center; 
+  padding: 25px 40px; border-bottom: 1px solid var(--border-color); 
+  position: sticky; top: 0; z-index: 1000; background: var(--bg-light);
+  transition: transform 0.3s ease-in-out; 
+}
+.header-main.scroll-down { transform: translateY(-100%); }
 
+.logo { font-family: var(--font-heading); font-size: 2.2rem; }
 .nav-links { display: flex; gap: 25px; list-style: none; font-size: 0.9rem; }
 .nav-links a:hover { text-decoration: underline; text-underline-offset: 6px; color: #666; }
-
-.header-icons { display: flex; gap: 20px; }
+.header-icons { display: flex; gap: 20px; align-items: center; }
 .header-icons svg { width: 20px; height: 20px; cursor: pointer; }
+
+/* Search Pop-out Bar */
+.search-overlay {
+  display: none; position: absolute; top: 40px; right: 50px; background: var(--bg-light);
+  border: 1px solid var(--border-color); padding: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); z-index: 1000;
+}
+.search-overlay.active { display: flex; gap: 10px; }
+.search-overlay input { padding: 8px 12px; border: 1px solid #ccc; width: 220px; outline: none; }
+.search-overlay button { background: var(--bg-dark); color: white; border: none; padding: 8px 15px; cursor: pointer; }
+
+/* =========================================
+   NEW: CART BADGE & TOAST NOTIFICATION
+   ========================================= */
+.cart-icon-link { position: relative; display: flex; align-items: center; }
+.cart-badge {
+  position: absolute; top: -8px; right: -8px; background: #ef4444; color: white;
+  border-radius: 50%; width: 16px; height: 16px; font-size: 10px;
+  display: flex; align-items: center; justify-content: center; font-weight: bold;
+  opacity: 0; transition: opacity 0.3s;
+}
+.cart-badge.visible { opacity: 1; }
+
+.toast-notification {
+  position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%);
+  background-color: var(--bg-dark); color: white; padding: 12px 24px; border-radius: 30px;
+  transition: bottom 0.4s ease-in-out; z-index: 2000; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.toast-notification.show { bottom: 30px; }
+
+/* =========================================
+   NEW: SCROLL REVEAL ANIMATIONS
+   ========================================= */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   CART PAGE SPECIFICS
+   ========================================= */
+.empty-cart-section { text-align: center; margin-top: 40px; margin-bottom: 20px;}
+.cart-title { font-family: var(--font-heading); font-size: 3rem; margin-bottom: 30px; font-weight: normal; }
+.cart-continue-btn { margin-bottom: 50px; }
+.login-prompt h2 { font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px; font-weight: normal;}
+.login-prompt p { font-size: 0.95rem; color: #555; }
 
 /* =========================================
    HERO SECTION & DARK BANNER
    ========================================= */
 .hero { position: relative; height: 60vh; background: #ddd; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero::before { content: ""; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: url('https://via.placeholder.com/800x600/ffb6c1/ffffff?text=Left+Image') center/cover; }
-.hero::after { content: ""; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: url('https://via.placeholder.com/800x600/add8e6/ffffff?text=Right+Image') center/cover; }
+.hero::before { content: ""; position: absolute; top: 0; left: 0; width: 50%; height: 100%; background: url('https://acigirlboutique.com/cdn/shop/files/A7900E06-D8BD-4E43-A8AD-AF32C6FDDDB0.jpg?v=1729668600&width=800') center/cover; }
+.hero::after { content: ""; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: url('https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesmadebyAciGirl_5_-Copy.jpg?v=1662451328&width=800') center/cover; }
 
-.hero-content { position: relative; z-index: 2; color: var(--text-light); background: rgba(0,0,0,0.3); padding: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;}
+.hero-content { position: relative; z-index: 2; color: var(--text-light); background: rgba(0,0,0,0.4); padding: 50px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%;}
 .hero-content h1 { font-family: var(--font-heading); font-size: 3.5rem; margin-bottom: 10px; font-weight: normal; }
 .hero-content p { margin-bottom: 30px; font-size: 1rem; }
 
 .dark-banner { background: var(--bg-dark); color: var(--text-light); text-align: center; padding: 40px 20px; font-family: var(--font-heading); font-size: 1.6rem; }
-
-/* =========================================
-   NEW PRODUCT ALERT (DARK SECTION)
-   ========================================= */
 .new-product-alert { background: var(--bg-dark); color: var(--text-light); padding: 80px 0; }
 .new-product-alert .subtitle { margin-bottom: 30px; font-size: 0.9rem; color: #ccc;}
 .new-product-alert .product-title { color: var(--text-light); margin-top: 15px;}
 .new-product-alert .product-price { color: #aaa; }
 
 /* =========================================
+   IMAGE WRAPPERS & HOVER EFFECTS (ZOOM & SWAP)
+   ========================================= */
+.img-wrapper { 
+  position: relative; overflow: hidden; background: var(--bg-offwhite); aspect-ratio: 1 / 1; margin-bottom: 15px;
+}
+.img-wrapper img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease, opacity 0.4s ease;}
+.product-card:hover .img-wrapper img { transform: scale(1.04); }
+.swap-on-hover .img-hover { position: absolute; top: 0; left: 0; opacity: 0; z-index: 2; }
+.swap-on-hover:hover .img-hover { opacity: 1; transform: scale(1.04); }
+
+/* =========================================
    GRIDS & PRODUCT CARDS
    ========================================= */
+.grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 
 .product-card { position: relative; }
-.img-wrapper { position: relative; }
-.product-card img { aspect-ratio: 1/1; margin-bottom: 15px; background: var(--bg-offwhite); }
 .product-title { font-size: 1rem; font-weight: normal; margin-bottom: 5px; font-family: var(--font-heading); }
 .product-price { font-size: 0.85rem; color: #555; }
-
-.badge { position: absolute; bottom: 10px; left: 10px; color: var(--text-light); padding: 5px 12px; font-size: 0.75rem; border-radius: 2px; }
+.badge { position: absolute; bottom: 10px; left: 10px; color: var(--text-light); padding: 5px 12px; font-size: 0.75rem; border-radius: 2px; z-index: 3;}
 .badge-sold-out { background: var(--bg-dark); }
 
 /* =========================================
    ASYMMETRIC GRID (ARTSY & CCICCIBOORICCI)
    ========================================= */
 .asymmetric-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
-.asymmetric-left img { height: 100%; object-fit: cover; }
-.asymmetric-right { display: flex; flex-direction: column; gap: 20px; }
-.asymmetric-right .product-card img { aspect-ratio: 4/3; }
+.asymmetric-left .img-wrapper { height: 100%; margin: 0; aspect-ratio: auto; }
+.asymmetric-right { display: flex; flex-direction: column; justify-content: space-between; gap: 20px; }
+.asymmetric-right .product-card { flex: 1; display: flex; flex-direction: column; }
+.asymmetric-right .product-card .img-wrapper { flex: 1; margin-bottom: 10px; aspect-ratio: auto; }
+.asymmetric-right .product-card .img-wrapper img { position: absolute; top: 0; left: 0; }
 
+@media (max-width: 900px) { .grid-5 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 768px) {
-  .asymmetric-grid, .grid-4, .grid-3 { grid-template-columns: 1fr; }
+  .asymmetric-grid, .grid-4, .grid-3, .grid-5 { grid-template-columns: 1fr 1fr; }
+  .asymmetric-grid { grid-template-columns: 1fr; }
   .hero::before, .hero::after { width: 100%; height: 50%; }
   .hero::after { top: 50%; }
 }
 
 /* =========================================
+   SLIDERS / CAROUSEL STYLES
+   ========================================= */
+.slider-wrapper { position: relative; display: flex; align-items: center; }
+.slider-container { overflow: hidden; width: 100%; padding: 10px 0; }
+.slider-track { display: flex; gap: 20px; transition: transform 0.5s ease-in-out; }
+.slider-card { min-width: calc((100% - 60px) / 4); flex-shrink: 0; }
+@media (max-width: 900px) { .slider-card { min-width: calc((100% - 40px) / 3); } }
+@media (max-width: 768px) { .slider-card { min-width: calc((100% - 20px) / 2); } }
+@media (max-width: 480px) { .slider-card { min-width: 100%; } }
+
+.slider-btn {
+  background: white; color: var(--bg-dark); border: 1px solid var(--border-color); border-radius: 50%;
+  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; position: absolute; z-index: 10; font-size: 1.2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s, color 0.3s;
+}
+.slider-btn:hover { background: var(--bg-dark); color: white; }
+.slider-btn.left-btn { left: -15px; }
+.slider-btn.right-btn { right: -15px; }
+.new-product-alert .slider-btn { background: #333; color: white; border: none; }
+.new-product-alert .slider-btn:hover { background: white; color: #333; }
+
+/* =========================================
    FEATURED BANNER SLIDER
    ========================================= */
-.featured-banner { position: relative; height: 50vh; background: url('https://via.placeholder.com/1600x600/8fbc8f/ffffff?text=Scrunchies+Background') center/cover; display: flex; align-items: center; justify-content: center; }
+.featured-banner { 
+  position: relative; height: 50vh; 
+  background: url('https://acigirlboutique.com/cdn/shop/files/Aci_Girl_Boutique.jpg?v=1660535232&width=2000') center/cover no-repeat; 
+  display: flex; align-items: center; justify-content: center; 
+}
 .featured-banner-card { background: var(--bg-light); padding: 50px; text-align: center; width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .featured-banner-card h2 { font-family: var(--font-heading); margin-bottom: 15px; font-weight: normal; font-size: 1.8rem;}
 .featured-banner-card p { font-size: 0.9rem; margin-bottom: 25px; color: #555;}
 .pagination-dots { text-align: center; padding: 20px; font-size: 0.8rem; color: #888; }
 
 /* =========================================
-   REVIEWS SECTION
+   NEWSLETTER & REVIEWS & VIDEO
    ========================================= */
+.newsletter-section { background: var(--bg-light); border-top: 1px solid #eee; }
 .reviews .grid-4 { gap: 15px; }
 .review-card { background: var(--bg-offwhite); padding: 40px 20px; text-align: center; }
 .review-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; }
 .review-title { font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 15px; font-weight: normal;}
 .review-text { font-size: 0.9rem; font-style: italic; color: #555; margin-bottom: 15px; }
 .review-handle { font-size: 0.85rem; font-weight: bold; }
-
 @media (max-width: 900px) { .reviews .grid-4 { grid-template-columns: repeat(2, 1fr); } }
 
-/* =========================================
-   VIDEO SECTION
-   ========================================= */
-.video-section { position: relative; display: flex; justify-content: center; align-items: center; cursor: pointer; }
-.play-btn { position: absolute; background: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-.play-btn::after { content: "▶"; font-size: 20px; color: var(--bg-dark); margin-left: 4px; }
+.video-responsive { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; }
+.video-responsive iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /* =========================================
    FOOTER
@@ -145,16 +233,37 @@ img { max-width: 100%; display: block; object-fit: cover; width: 100%; }
 .site-footer h2 { font-size: 1.8rem; margin-bottom: 25px; font-weight: normal; color: #ffffff; }
 .site-footer p { font-size: 1rem; margin-bottom: 10px; color: #cccccc; }
 .footer-promo { margin: 40px 0 !important; }
-
 .social-icons { display: flex; justify-content: center; gap: 25px; margin-bottom: 50px; }
+.social-icons a { display: flex; align-items: center; }
 .social-icons svg { width: 20px; height: 20px; fill: #ffffff; cursor: pointer; transition: opacity 0.3s ease; }
 .social-icons svg:hover { opacity: 0.6; }
-
 .footer-bottom { border-top: 1px solid #2a2a2a; padding-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 15px; font-family: var(--font-body); font-size: 0.8rem; color: #888;}
 .paypal-icon { background: white; padding: 6px 12px; border-radius: 4px; display: flex; align-items: center; justify-content: center;}
 
 /* =========================================
-   MOCK CHAT BUTTON
+   CHAT WIDGET & BUTTON 
    ========================================= */
-.chat-btn { position: fixed; bottom: 30px; right: 30px; background: #eab308; color: var(--bg-dark); padding: 12px 24px; border-radius: 30px; font-weight: bold; display: flex; align-items: center; gap: 8px; cursor: pointer; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-.chat-btn .badge { background: #ef4444; color: white; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; font-size: 10px; position: absolute; top: -5px; right: 0; }
+.chat-widget {
+  position: fixed; bottom: 95px; right: 30px; width: 320px; background: white;
+  border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); z-index: 1001;
+  display: none; flex-direction: column; overflow: hidden; font-family: Arial, sans-serif;
+}
+.chat-widget.active { display: flex; }
+.chat-header { background: #dca331; padding: 20px; border-bottom: 2px solid white; }
+.chat-header h4 { margin: 0; font-size: 1.15rem; color: #121212; }
+.chat-messages { padding: 20px; background: #f9f9f9; height: 200px; overflow-y: auto; display: flex; flex-direction: column; justify-content: flex-end;}
+.chat-bubble { max-width: 90%; padding: 12px 16px; border-radius: 18px; font-size: 0.9rem; line-height: 1.4;}
+.bot-message { background: #e5e5ea; color: #121212; align-self: flex-start; border-bottom-left-radius: 4px; }
+.chat-body { background: white; padding: 15px; border-top: 1px solid #eee;}
+.chat-input-container { display: flex; background: #f1f1f1; border-radius: 20px; padding: 5px; align-items: center; border: 1px solid #ccc;}
+.chat-input-container input { border: none; outline: none; width: 100%; padding: 8px 15px; font-size: 0.95rem; color: #333; background: transparent;}
+.chat-input-container button { background: transparent; border: none; cursor: pointer; padding-right: 10px; }
+
+.chat-btn { 
+  position: fixed; bottom: 30px; right: 30px; background: #dca331; color: #121212; 
+  padding: 12px 24px; border-radius: 30px; font-weight: bold; font-size: 0.95rem;
+  display: flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; 
+  z-index: 1002; box-shadow: 0 4px 10px rgba(0,0,0,0.2); border: none; outline: none; transition: all 0.3s ease;
+}
+.chat-btn.open-state { padding: 16px; border-radius: 50%; }
+.chat-icon-wrapper { display: flex; align-items: center; gap: 8px; }
