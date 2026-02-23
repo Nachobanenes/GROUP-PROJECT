@@ -3,22 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - Aci Girl Boutique</title>
+  <title>Collections - Aci Girl Boutique</title>
   <link rel="stylesheet" href="Css/Style.css">
+  <style>
+    /* Styles for the image carousel */
+    .carousel-container {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1; /* Maintain a square shape */
+    }
+
+    .carousel-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out; /* Smooth fade transition */
+      z-index: 0;
+    }
+
+    .carousel-img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    /* Style to disable the links for now */
+    .disabled-link {
+        pointer-events: none;
+        cursor: default;
+    }
+  </style>
 </head>
 <body>
 
   <div class="top-bar">Tag/Follow @acigirlboutique on facebook, instagram, & tiktok</div>
 
   <header class="header-main" id="mainHeader">
-    <div class="logo"><a href="Menu-FRONT.html" style="text-decoration: none; color: inherit;">Aci Girl Boutique</a></div>
+    <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Aci Girl Boutique</a></div>
     <ul class="nav-links">
-      <li><a href="Menu-FRONT.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="Scrunchies.html">Scrunchies</a></li>
       <li><a href="CCICCIBOORICCI.html">CCICCIBOORICCI</a></li>
       <li><a href="ChloesVersion.html">Chloe's Version</a></li>
-      <li><a href="Collections.html">Collections</a></li>
-      <li><a href="Contact.html" style="text-decoration: underline; text-underline-offset: 6px;">Contact</a></li>
+      <li><a href="Collections.html" class="active">Collections</a></li>
+      <li><a href="Contact.html">Contact</a></li>
     </ul>
     
     <div class="header-icons" style="position: relative;">
@@ -35,27 +66,55 @@
     </div>
   </header>
 
-  <section class="container section-spacing reveal-on-scroll" style="max-width: 800px; margin: 0 auto; padding-top: 60px; padding-bottom: 100px;">
-    
-    <h1 style="text-align: left; font-size: 3.5rem; font-weight: normal; font-family: var(--font-heading); margin-bottom: 50px;">Contact</h1>
-    
-    <form class="contact-form" action="#" method="POST">
-      <div class="form-row">
-        <input type="text" name="name" placeholder="Name" class="form-input">
-        <input type="email" name="email" placeholder="Email *" required class="form-input">
-      </div>
-      <div class="form-row">
-        <input type="tel" name="phone" placeholder="Phone number" class="form-input">
-      </div>
-      <div class="form-row">
-        <textarea name="comment" placeholder="Comment" rows="6" class="form-input"></textarea>
-      </div>
-      <button type="submit" class="btn btn-solid-dark" style="padding: 15px 40px; font-size: 1rem; width: max-content;">Send</button>
-    </form>
-
+  <section class="hero" style="height: 40vh; background: #f4f4f4; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="hero-content" style="background: transparent; color: var(--text-main); padding: 20px;">
+      <h1 style="font-size: 3rem; font-family: var(--font-heading); margin-bottom: 10px;">Our Collections</h1>
+      <p style="font-size: 1.2rem;">Explore our unique and handcrafted series.</p>
+    </div>
   </section>
 
-  <footer class="site-footer reveal-on-scroll">
+  <section class="container section-spacing">
+    <div class="grid-3">
+      
+      <div class="product-card collection-card">
+        <a href="#" class="clickable-card disabled-link">
+          <div class="img-wrapper carousel-container" id="potterheads-carousel">
+            <img class="carousel-img active" src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesGiftSet_1.jpg?v=1667195832&width=360" alt="Potterheads 1">
+            <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchiesmadebyAciGirl_5_-Copy.jpg?v=1662451328&width=360" alt="Potterheads 2">
+            <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/products/HPCollection_15.jpg?v=1662349370&width=360" alt="Potterheads 3">
+            <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/products/HarryPotterScrunchies_5.jpg?v=1662451817&width=360" alt="Potterheads 4">
+          </div>
+          <h3 class="product-title" style="text-align: center; margin-top: 15px;">Potterheads Collection</h3>
+        </a>
+      </div>
+
+      <div class="product-card collection-card">
+        <a href="#" class="clickable-card disabled-link">
+          <div class="img-wrapper carousel-container" id="cciccibooricci-carousel">
+            <img class="carousel-img active" src="https://acigirlboutique.com/cdn/shop/files/D150C7EA-AAB4-4C83-A57A-E33273CF4935.jpg?v=1729163393&width=360" alt="CCICCIBOORICCI 1">
+            <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/files/E79CDA1B-D717-424E-9D9E-736816BF6808.jpg?v=1729088083&width=360" alt="CCICCIBOORICCI 2">
+             <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/collections/B0FDECAE-E0A3-4102-92B1-B1D2986C8088.jpg?v=1729074689&width=750" alt="CCICCIBOORICCI 3">
+          </div>
+          <h3 class="product-title" style="text-align: center; margin-top: 15px;">CCICCIBOORICCI Collection</h3>
+        </a>
+      </div>
+
+      <div class="product-card collection-card">
+        <a href="#" class="clickable-card disabled-link">
+          <div class="img-wrapper carousel-container" id="stickers-carousel">
+            <img class="carousel-img active" src="https://acigirlboutique.com/cdn/shop/files/E79CDA1B-D717-424E-9D9E-736816BF6808.jpg?v=1729088083&width=360" alt="Stickers 1">
+            <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/files/C3BD195F-1B18-4E5B-9C27-2EDD38F00D4D.jpg?v=1729075283&width=360" alt="Stickers 2">
+            <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/files/7048C775-86BB-44A2-8FB0-5A2CE394ECAD.jpg?v=1729177988&width=360" alt="Stickers 3">
+            <img class="carousel-img" src="https://acigirlboutique.com/cdn/shop/files/1C7506D4-E2C7-4558-83A2-88633B18F0B4.jpg?v=1729090242&width=360" alt="Stickers 4">
+          </div>
+          <h3 class="product-title" style="text-align: center; margin-top: 15px;">Cat Art Stickers Collection</h3>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
     <h2>Aci Girl Boutique x HUB: Make Lab</h2>
     <p>Store Hours: Mon-Thu: 10am-6pm & Fri-Sun: 10am-7pm</p>
     <p>Space01 HUB Make Lab, First United Bldg. 413 Escolta, Manila</p>
@@ -90,7 +149,6 @@
       </div>
     </div>
   </div>
-
   <button class="chat-btn" id="chatBtn">
     <span class="chat-icon-wrapper" id="chatIconWrapper">
       <svg class="chat-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
@@ -99,5 +157,32 @@
   </button>
 
   <script src="Js/script.js"></script>
+
+  <script>
+    // JavaScript for the image carousel
+    document.addEventListener('DOMContentLoaded', function() {
+      const carousels = document.querySelectorAll('.carousel-container');
+
+      carousels.forEach(carousel => {
+        const images = carousel.querySelectorAll('.carousel-img');
+        let currentIndex = 0;
+
+        // Function to change to the next image
+        function changeImage() {
+          // Remove active class from current image
+          images[currentIndex].classList.remove('active');
+
+          // Move to the next image, looping back to the start
+          currentIndex = (currentIndex + 1) % images.length;
+
+          // Add active class to the new current image
+          images[currentIndex].classList.add('active');
+        }
+
+        // Set interval to change image every 3 seconds
+        setInterval(changeImage, 3000);
+      });
+    });
+  </script>
 </body>
 </html>
