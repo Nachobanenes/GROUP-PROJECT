@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chloe's Version - Aci Girl Boutique</title>
+  <link rel="stylesheet" href="Css/Style.css">
+</head>
+<body>
+
+  <div class="top-bar">Tag/Follow @acigirlboutique on facebook, instagram, & tiktok</div>
+
+  <header class="header-main" id="mainHeader">
+    <div class="logo"><a href="Menu-FRONT.html" style="text-decoration: none; color: inherit;">Aci Girl Boutique</a></div>
+    <ul class="nav-links">
+      <li><a href="Menu-FRONT.html">Home</a></li>
+      <li><a href="Scrunchies.html">Scrunchies</a></li>
+      <li><a href="CCICCIBOORICCI.html">CCICCIBOORICCI</a></li>
+      <li><a href="ChloesVersion.html" style="text-decoration: underline; text-underline-offset: 6px;">Chloe's Version</a></li>
+      <li><a href="#">Collections</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+    
+    <div class="header-icons" style="position: relative;">
+      <svg id="searchBtn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg>
+      <div id="searchOverlay" class="search-overlay">
+        <input type="text" placeholder="Search products...">
+        <button id="closeSearchBtn">X</button>
+      </div>
+
+      <a href="Cart.html" class="cart-icon-link" style="color: inherit;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span id="cartBadge" class="cart-badge">0</span>
+      </a>
+    </div>
+  </header>
+
+  <section class="container section-spacing reveal-on-scroll">
+    <div class="collection-header">
+      <h1>Chloe's Version</h1>
+    </div>
+
+    <div class="collection-toolbar" style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 30px;">
+      <span class="product-count" style="color: #666; font-size: 0.9rem;"></span>
+    </div>
+
+    <div class="grid-5">
+      
+      <div class="product-card">
+        <a href="#" class="clickable-card">
+          <div class="img-wrapper">
+            <img src="https://acigirlboutique.com/cdn/shop/files/A7900E06-D8BD-4E43-A8AD-AF32C6FDDDB0.jpg?v=1729668600&width=1100" alt="Cranium Cutie Charm Bracelet">
+          </div>
+          <h3 class="product-title">Cranium Cutie Charm Bracelet</h3>
+          <p class="product-price">
+            <span class="actual-price">₱150.00 PHP</span>
+          </p>
+        </a>
+        <button class="btn btn-outline-dark add-to-cart">Choose options</button>
+      </div>
+
+      <div class="product-card">
+        <a href="#" class="clickable-card">
+          <div class="img-wrapper">
+            <img src="https://acigirlboutique.com/cdn/shop/files/1B100BB3-2262-407A-BAC5-0D6CE794D3E4.jpg?v=1753948140&width=1100" alt="Swifities Friendship Bracelet">
+            <span class="badge badge-sale">Sale</span>
+          </div>
+          <h3 class="product-title">Swifities Friendship Bracelet</h3>
+          <p class="product-price">
+            <s class="old-price">₱150.00 PHP</s> 
+            <span class="actual-price">₱100.00 PHP</span>
+          </p>
+        </a>
+        <button class="btn btn-outline-dark add-to-cart">Add to cart</button>
+      </div>
+
+      <div class="product-card">
+        <a href="#" class="clickable-card">
+          <div class="img-wrapper">
+            <img src="https://acigirlboutique.com/cdn/shop/files/7A7387C4-68E3-4448-93E1-978A4A04BD18.jpg?v=1753949473&width=1100" alt="Swifties Friendship Bracelet">
+            <span class="badge badge-sale">Sale</span>
+          </div>
+          <h3 class="product-title">Swifties Friendship Bracelet</h3>
+          <p class="product-price">
+            <s class="old-price">₱250.00 PHP</s> 
+            <span class="actual-price">From ₱150.00 PHP</span>
+          </p>
+        </a>
+        <button class="btn btn-outline-dark add-to-cart">Choose options</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer reveal-on-scroll">
+    <h2>Aci Girl Boutique x HUB: Make Lab</h2>
+    <p>Store Hours: Mon-Thu: 10am-6pm & Fri-Sun: 10am-7pm</p>
+    <p>Space01 HUB Make Lab, First United Bldg. 413 Escolta, Manila</p>
+    <p class="footer-promo">Follow @acigirlboutique to get the latest updates, promos, & POP-UP Shopping Sched!</p>
+    <div class="footer-bottom"><p>&copy; 2026, Aci Girl Boutique</p></div>
+  </footer>
+
+  <div id="filterOverlay" class="filter-overlay"></div>
+  <div id="filterPanel" class="filter-panel">
+    <div class="filter-panel-header">
+      <h2>Filter & Sort</h2>
+      <button id="closeFilterBtn" class="close-filter-btn">X</button>
+    </div>
+    <div class="filter-panel-body">
+      <div class="filter-section">
+        <div class="filter-section-header">
+          <label>Availability</label>
+          <a href="#" class="reset-link" id="resetAvailability">Reset</a>
+        </div>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="inStock"> In stock</label>
+          <label><input type="checkbox" id="outOfStock"> Out of stock</label>
+        </div>
+      </div>
+      <div class="filter-section">
+        <div class="filter-section-header">
+          <label>Price</label>
+          <a href="#" class="reset-link" id="resetPrice">Reset</a>
+        </div>
+        <p class="price-hint">The highest price is ₱150.00</p>
+        <div class="price-inputs">
+          <div class="input-wrapper">
+            <span>₱</span>
+            <input type="number" id="priceFrom" placeholder="From" min="0">
+          </div>
+          <div class="input-wrapper">
+            <span>₱</span>
+            <input type="number" id="priceTo" placeholder="To" min="0">
+          </div>
+        </div>
+      </div>
+      <div class="filter-section">
+        <label>Sort by</label>
+        <select id="sortSelect">
+          <option>Best selling</option>
+          <option>Alphabetically, A-Z</option>
+          <option>Alphabetically, Z-A</option>
+          <option>Price, low to high</option>
+          <option>Price, high to low</option>
+          <option>Date, old to new</option>
+          <option>Date, new to old</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-panel-footer">
+      <button id="applyFiltersBtn" class="btn btn-solid-dark" style="width: 100%; border-radius: 4px;">Apply</button>
+    </div>
+  </div>
+
+  <button class="chat-btn" id="chatBtn">
+    <span class="chat-icon-wrapper" id="chatIconWrapper">
+      <svg class="chat-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      <span class="chat-text" id="chatText">Chat</span>
+    </span>
+  </button>
+
+  <button id="openFilterBtn" class="floating-filter-toggle">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="4" y1="6" x2="16" y2="6"></line>
+      <line x1="4" y1="12" x2="12" y2="12"></line>
+      <line x1="4" y1="18" x2="8" y2="18"></line>
+      <line x1="18" y1="9" x2="18" y2="21"></line>
+      <polyline points="15 18 18 21 21 18"></polyline>
+    </svg>
+    <span>Sort</span>
+  </button>
+
+  <div id="toastNotification" class="toast-notification">Item added to cart!</div>
+
+  <script src="Js/script.js"></script>
+</body>
+</html>

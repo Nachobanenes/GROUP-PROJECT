@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Cart - Aci Girl Boutique</title>
+  <title>Contact - Aci Girl Boutique</title>
   <link rel="stylesheet" href="Css/Style.css">
 </head>
 <body>
@@ -19,7 +18,7 @@
       <li><a href="CCICCIBOORICCI.html">CCICCIBOORICCI</a></li>
       <li><a href="ChloesVersion.html">Chloe's Version</a></li>
       <li><a href="#">Collections</a></li>
-      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Contact.html" style="text-decoration: underline; text-underline-offset: 6px;">Contact</a></li>
     </ul>
     
     <div class="header-icons" style="position: relative;">
@@ -36,64 +35,24 @@
     </div>
   </header>
 
-  <section class="container section-spacing empty-cart-section reveal-on-scroll">
-    <h1 class="cart-title">Your cart is empty</h1>
-    <a href="index.html" class="btn btn-solid-dark cart-continue-btn">Continue shopping</a>
+  <section class="container section-spacing reveal-on-scroll" style="max-width: 800px; margin: 0 auto; padding-top: 60px; padding-bottom: 100px;">
     
-    <div class="login-prompt">
-      <h2>Have an account?</h2>
-      <p><a href="#" style="text-decoration: underline; color: inherit;">Log in</a> to check out faster.</p>
-    </div>
-  </section>
+    <h1 style="text-align: left; font-size: 3.5rem; font-weight: normal; font-family: var(--font-heading); margin-bottom: 50px;">Contact</h1>
+    
+    <form class="contact-form" action="#" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Name" class="form-input">
+        <input type="email" name="email" placeholder="Email *" required class="form-input">
+      </div>
+      <div class="form-row">
+        <input type="tel" name="phone" placeholder="Phone number" class="form-input">
+      </div>
+      <div class="form-row">
+        <textarea name="comment" placeholder="Comment" rows="6" class="form-input"></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid-dark" style="padding: 15px 40px; font-size: 1rem; width: max-content;">Send</button>
+    </form>
 
-  <section class="container section-spacing reveal-on-scroll" style="margin-bottom: 50px;">
-    <h2 class="section-title" style="text-align: left;">Featured collection</h2>
-    <div class="grid-4">
-      <div class="product-card">
-        <a href="#" class="clickable-card">
-          <div class="img-wrapper">
-            <img src="https://acigirlboutique.com/cdn/shop/collections/Classic_Scrunchies_Maxi_10.jpg?v=1660464600&width=535" alt="Anna Scrunchie">
-            <span class="badge badge-sold-out">Sold out</span>
-          </div>
-          <h3 class="product-title">Anna | Princessy Collection</h3>
-          <p class="product-price">₱35.00 PHP</p>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="#" class="clickable-card">
-          <div class="img-wrapper">
-            <img src="https://acigirlboutique.com/cdn/shop/collections/Sparkling_Scrunchies_Collection_by_Aci_Girl_6.jpg?v=1674535474&width=535" alt="Argee Scrunchie">
-            <span class="badge badge-sold-out">Sold out</span>
-          </div>
-          <h3 class="product-title">ARGEE | Fluffy Scrunchies</h3>
-          <p class="product-price">₱100.00 PHP</p>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="#" class="clickable-card">
-          <div class="img-wrapper">
-            <img src="https://acigirlboutique.com/cdn/shop/collections/20220513_184718.jpg?v=1660460879&width=535" alt="Ariel Scrunchie">
-            <span class="badge badge-sold-out">Sold out</span>
-          </div>
-          <h3 class="product-title">Ariel | Princessy Collection</h3>
-          <p class="product-price">₱35.00 PHP</p>
-        </a>
-      </div>
-      <div class="product-card">
-        <a href="#" class="clickable-card">
-          <div class="img-wrapper">
-            <img src="https://acigirlboutique.com/cdn/shop/collections/Scrunchies_made_by_Chloe.jpg?v=1660629917&width=535" alt="Aurora Scrunchie">
-            <span class="badge badge-sold-out">Sold out</span>
-          </div>
-          <h3 class="product-title">Aurora | Princessy Collection</h3>
-          <p class="product-price">From ₱25.00 PHP</p>
-        </a>
-      </div>
-    </div>
-    
-    <div class="center-btn-wrapper" style="margin-top: 50px;">
-      <a href="index.html" class="btn btn-solid-dark">View all</a>
-    </div>
   </section>
 
   <footer class="site-footer reveal-on-scroll">

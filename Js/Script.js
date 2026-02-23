@@ -211,4 +211,137 @@ document.addEventListener('DOMContentLoaded', function() {
     startAutoPlay();
   });
 
+//==========================================
+//7. DYNAMIC PRODUCT COUNTER
+//==========================================
+  const productGrid = document.querySelector('.grid-5');
+  const productCountDisplay = document.querySelector('.product-count');
+
+  if (productGrid && productCountDisplay) {
+    const count = productGrid.querySelectorAll('.product-card').length;
+    
+
+    productCountDisplay.textContent = `${count} product${count === 1 ? '' : 's'}`;
+  }
+
+  // ==========================================
+  // 8. SIDE FILTER PANEL LOGIC
+  // ==========================================
+  const openFilterBtn = document.getElementById('openFilterBtn');
+  const closeFilterBtn = document.getElementById('closeFilterBtn');
+  const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+  const filterPanel = document.getElementById('filterPanel');
+  const filterOverlay = document.getElementById('filterOverlay');
+
+  function toggleFilterPanel() {
+    if(filterPanel && filterOverlay) {
+      filterPanel.classList.toggle('active');
+      filterOverlay.classList.toggle('active');
+    }
+  }
+
+
+  if (openFilterBtn) {
+    openFilterBtn.addEventListener('click', (e) => { 
+      e.preventDefault(); 
+      toggleFilterPanel(); 
+    });
+  }
+
+  if (closeFilterBtn) closeFilterBtn.addEventListener('click', toggleFilterPanel);
+  if (filterOverlay) filterOverlay.addEventListener('click', toggleFilterPanel);
+  if (applyFiltersBtn) applyFiltersBtn.addEventListener('click', toggleFilterPanel);
+
+  document.addEventListener('DOMContentLoaded', () => {
+  const floatingBtn = document.querySelector('.floating-filter-toggle');
+  const chatBtn = document.getElementById('chatBtn');
+
+  if (floatingBtn && chatBtn) {
+    function updateFloatingPosition() {
+      const chatRect = chatBtn.getBoundingClientRect();
+      const offset = 15; 
+      floatingBtn.style.bottom = `${window.innerHeight - chatRect.top + offset}px`;
+    }
+
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(updateFloatingPosition);
+    });
+
+    updateFloatingPosition();
+  }
+});
+
+// ==========================================
+// 9. ADVANCED FILTER & SORT LOGIC
+// ==========================================
+  const applyBtn = document.getElementById('applyFiltersBtn');
+  const resetAvailability = document.getElementById('resetAvailability');
+  const resetPrice = document.getElementById('resetPrice');
+
+  if (resetAvailability) {
+    resetAvailability.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('inStock').checked = false;
+      document.getElementById('outOfStock').checked = false;
+    });
+  }
+
+  if (resetPrice) {
+    resetPrice.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('priceFrom').value = '';
+      document.getElementById('priceTo').value = '';
+    });
+  }
+
+  if (applyBtn) {
+    applyBtn.addEventListener('click', function() {
+      const grid = document.querySelector('.grid-5');
+      const products = Array.from(grid.querySelectorAll('.product-card'));
+      
+      const sortValue = document.getElementById('sortSelect').value; 
+      const inStockChecked = document.getElementById('inStock').checked;
+      const outOfStockChecked = document.getElementById('outOfStock').checked;
+      
+      const minPriceStr = document.getElementById('priceFrom').value;
+      const maxPriceStr = document.getElementById('priceTo').value;
+      const minPrice = minPriceStr ? parseFloat(minPriceStr) : 0;
+      const maxPrice = maxPriceStr ? parseFloat(maxPriceStr) : Infinity;
+
+      products.forEach(product => {
+        let isVisible = true;
+        const isSoldOut = product.querySelector('.badge-sold-out') !== null;
+        
+        let priceElement = product.querySelector('.actual-price') || product.querySelector('.product-price');
+        let productPrice = parseFloat(priceElement.innerText.replace(/[^0-9.]/g, ""));
+
+        if (inStockChecked && !outOfStockChecked && isSoldOut) isVisible = false;
+        if (outOfStockChecked && !inStockChecked && !isSoldOut) isVisible = false;
+        if (productPrice < minPrice || productPrice > maxPrice) isVisible = false;
+
+        product.style.display = isVisible ? 'block' : 'none';
+      });
+
+      let sortedProducts = [...products];
+
+      if (sortValue === "Alphabetically, A-Z") {
+        sortedProducts.sort((a, b) => a.querySelector('.product-title').innerText.trim().localeCompare(b.querySelector('.product-title').innerText.trim()));
+      } else if (sortValue === "Alphabetically, Z-A") {
+        sortedProducts.sort((a, b) => b.querySelector('.product-title').innerText.trim().localeCompare(a.querySelector('.product-title').innerText.trim()));
+      } else if (sortValue === "Price, low to high" || sortValue === "Price, high to low") {
+        sortedProducts.sort((a, b) => {
+          
+          let priceElemA = a.querySelector('.actual-price') || a.querySelector('.product-price');
+          let priceElemB = b.querySelector('.actual-price') || b.querySelector('.product-price');
+          let valA = parseFloat(priceElemA.innerText.replace(/[^0-9.]/g, ""));
+          let valB = parseFloat(priceElemB.innerText.replace(/[^0-9.]/g, ""));
+          return sortValue === "Price, low to high" ? valA - valB : valB - valA;
+        });
+      }
+
+      grid.innerHTML = ""; 
+      sortedProducts.forEach(product => grid.appendChild(product));
+      toggleFilterPanel(); 
+    });
+  }
 });
