@@ -10,7 +10,7 @@
     .carousel-container {
       position: relative;
       overflow: hidden;
-      aspect-ratio: 1 / 1; /* Maintain a square shape */
+      aspect-ratio: 1 / 1;
     }
 
     .carousel-img {
@@ -21,7 +21,7 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 1s ease-in-out; /* Smooth fade transition */
+      transition: opacity 1s ease-in-out;
       z-index: 0;
     }
 
@@ -30,11 +30,7 @@
       z-index: 1;
     }
 
-    /* Style to disable the links for now */
-    .disabled-link {
-        pointer-events: none;
-        cursor: default;
-    }
+
   </style>
 </head>
 <body>
@@ -66,8 +62,8 @@
     </div>
   </header>
 
-  <section class="hero" style="height: 40vh; background: #f4f4f4; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div class="hero-content" style="background: transparent; color: var(--text-main); padding: 20px;">
+  <section class="hero" style="height: 40vh; background: #fffdfd; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="hero-content" style="background: transparent; color: white; padding: 20px;">
       <h1 style="font-size: 3rem; font-family: var(--font-heading); margin-bottom: 10px;">Our Collections</h1>
       <p style="font-size: 1.2rem;">Explore our unique and handcrafted series.</p>
     </div>
