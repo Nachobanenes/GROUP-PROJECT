@@ -626,3 +626,37 @@ FOR QR CODE ELEMENTS
   color: #555;
 }
 
+/* ================= PAGINATION ================= */
+
+.pagination-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:50px;
+}
+
+.page-numbers{
+  display:flex;
+  gap:8px;
+}
+
+.page-btn{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid #222;
+  background:white;
+  cursor:pointer;
+  user-select:none;
+  transition:0.2s;
+}
+
+.page-btn:hover{
+  background:#111;
+  color:white;
+}
+
+.page-btn.active{
+  background:#111;
+  color:white;
+}
