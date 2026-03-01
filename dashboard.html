@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Aci Girl Boutique</title>
+  <link rel="stylesheet" href="Css/Style.css">
+  <style>
+    /* Dashboard specific overrides */
+    
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    Tag/Follow @acigirlboutique on Facebook, Instagram, & TikTok
+  </div>
+
+  <!-- Header -->
+  <header class="header-main" id="mainHeader">
+    <div class="logo">
+      <a href="index.html" style="text-decoration:none;color:inherit;">
+        Aci Girl Boutique
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="items.html">Items</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="Dashboard.html" class="active">Dashboard</a></li>
+    </ul>
+  </header>
+
+  <!-- Login Form -->
+  <div class="login-container" id="loginContainer">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginBtn">Login</button>
+    <p class="error" id="loginError"></p>
+  </div>
+
+  <!-- Dashboard Tabs (buttons visible after login) -->
+<div class="tabs" id="tabsContainer" style="display:none;">
+  <button class="active" data-tab="diagnostics">Diagnostics</button>
+  <button data-tab="inventory">Inventory</button>
+</div>
+
+  <!-- Tab Contents -->
+<div style="margin-left: 10%; margin-right: 10%;"id="dashboardContent" style="display:none;">
+  <div id="diagnostics" class="tab-content" style="display:none;">
+    <table>
+      <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Customer Name</th>
+        <th>Contact Number</th>
+        <th>Reference Number</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+    </table>
+  </div>
+
+  <div id="inventory" class="tab-content" style="display:none;">
+    <table>
+      <thead>
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Stock</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+
+  </section>
+
+  <script src="Js/dashboard.js"></script>
+
+</body>
+</html>
