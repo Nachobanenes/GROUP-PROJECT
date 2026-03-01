@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         
         if(error) console.error("Order Error:", error.message)
         else {
-                const catalog = []
+                const catalog = [[]]
                 for(i = 0; i < inventory.length; i += 5*3) {
                         catalog[i] = inventory.slice(i, i+15)
                 }
@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                 const dce = document.createElement
                 catalog.forEach((page) => {
                         const _page = dce("div")
-                        _page.id = `inventory-page-${page}`
-                        _page.class = "grid-5"
+                        _page.id = `invpg${page}`
+                        _page.class = "grid-0"
                         page.forEach((product) => {
                                 _page.innerHTML +=
                                         `<div class="product-card">`+
