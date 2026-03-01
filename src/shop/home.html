@@ -2,6 +2,6 @@
 <script type="module" src="../shared/scripts/supabase.js"></script>
 
 <script type="module">
-        const { date } = await window.supabase.from('Test').select('*')
+        const { data, error } = await supabase.from('Test').select('*')
         console.log(data)
 </script>
