@@ -1,8 +1,10 @@
 import { supabase } from '../shared/scripts/supabase.js'
 
 window.addEventListener('DOMContentLoaded', async () => {
-        const checkout = async(reference, name, phone, address, order) => {
-                const order = order.map(item => ({
+        const checkout = async(reference, name, phone, address) => {
+                let basket = JSON.parse(localStorage.getItem('basket')) || null
+                if(!basket) { alert("You ordered nothing..."); return; }
+                const order = basket.map(item => ({
                         id: item.id,
                         qty: item.qty
                 }))
@@ -20,7 +22,8 @@ window.addEventListener('DOMContentLoaded', async () => {
                                 alert(`Checkout failed: ${error.message}`);
                                 return;
                         }
-                        alert("Payment submitted! YOur order is pending verification.");
+                        localStorage.setItem("basket", null)
+                        alert("Payment submitted! Your order is pending verification.");
                 } catch(err) {
                         console.error("Unexpected error:", err)
                         alert("An unexpected error occurred. Please try again.")
