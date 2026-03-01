@@ -589,3 +589,119 @@ textarea.form-input {
 .login-container button { width:90%; padding:12px; margin-top:10px; border-radius:6px; border:none; background-color:#333; color:#fff; cursor:pointer; transition:0.2s; }
 .login-container button:hover { background-color:#555; }
 .error { color:red; margin-top:10px; }
+
+/* ================= PAGINATION ================= */
+
+.pagination-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:50px;
+}
+
+.page-numbers{
+  display:flex;
+  gap:8px;
+}
+
+.page-btn{
+  display:inline-block;
+  padding:8px 14px;
+  border:1px solid #222;
+  background:white;
+  cursor:pointer;
+  user-select:none;
+  transition:0.2s;
+}
+
+.page-btn:hover{
+  background:#111;
+  color:white;
+}
+
+.page-btn.active{
+  background:#111;
+  color:white;
+}
+
+.collection-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+
+/* Flex container */
+.products-wrapper{
+  display:flex;
+  gap:30px;
+  align-items:flex-start; /* align sidebar with grid top */
+}
+
+.filter-sidebar {
+  font-family: 'Poppins', 'Helvetica', sans-serif;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+
+  /* Restore the border and background */
+  border: 1px solid #ddd;      /* light gray border */
+  background-color: #fff;      /* white background to separate from page */
+  padding: 20px;               /* inner spacing */
+  border-radius: 8px;          /* subtle rounded corners */
+  width: 220px;                /* fixed sidebar width */
+  position: sticky;            /* stays visible when scrolling */
+  top: 20px;                   /* offset from top when scrolling */
+}
+
+.filter-sidebar h3 {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.filter-sidebar label {
+  font-size: 14px;
+  color: #444;
+}
+
+.filter-sidebar input[type="checkbox"],
+.filter-sidebar input[type="radio"] {
+  accent-color: #222;
+  margin-right: 8px;
+}
+
+.filter-sidebar button {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* ===== PRODUCTS GRID — 5 PER ROW ===== */
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+  gap: 25px;
+  width: 100%;
+}
+
+/* Prevent cards from stretching weirdly */
+.product-card {
+  width: 100%;
+}
+
+/* Images stay proportional */
+.product-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Price Range styling (optional) */
+#priceRange{
+  width:100%;
+  margin:8px 0;
+}
+

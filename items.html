@@ -60,12 +60,52 @@
 <section class="container section-spacing reveal-on-scroll">
 
   <div class="collection-header">
-    <h1>OUR ITEMS</h1>
+<div class="products-wrapper">
+
+  <!-- ======== FILTER SIDEBAR ======== -->
+<aside class="filter-sidebar">
+  <h3>Filter & Sort</h3>
+
+  <!-- Availability -->
+  <div class="filter-section">
+    <p><strong>Availability</strong></p>
+    <label><input type="checkbox" id="inStock"> In stock</label><br>
+    <label><input type="checkbox" id="outOfStock"> Out of stock</label>
   </div>
 
-  <div class="collection-toolbar">
-    <span class="product-count"></span>
+  <!-- Price Range -->
+  <div class="filter-section">
+    <p><strong>Price Range (₱)</strong></p>
+    <div class="price-range-inputs">
+      <input type="number" id="priceFrom" placeholder="From" min="0" value="0">
+      <span>–</span>
+      <input type="number" id="priceTo" placeholder="To" min="0" value="500">
+    </div>
+    <div class="price-range-sliders">
+      <input type="range" id="rangeFrom" min="0" max="500" value="0">
+      <input type="range" id="rangeTo" min="0" max="500" value="500">
+    </div>
   </div>
+
+  <!-- Category -->
+  <div class="filter-section">
+    <p><strong>Category</strong></p>
+    <label><input type="radio" name="category" value="stickers"> Stickers</label><br>
+    <label><input type="radio" name="category" value="bracelets"> Bracelets</label><br>
+    <label><input type="radio" name="category" value="scrunchies"> Scrunchies</label>
+  </div>
+
+  <!-- Sort -->
+  <div class="filter-section">
+    <p><strong>Sort by</strong></p>
+    <label><input type="radio" name="sort" value="best-selling"> Best Selling</label><br>
+    <label><input type="radio" name="sort" value="price-low-high"> Price: Low to High</label><br>
+    <label><input type="radio" name="sort" value="price-high-low"> Price: High to Low</label><br>
+    <label><input type="radio" name="sort" value="alphabetical"> Alphabetical</label>
+  </div>
+
+  <button id="applyFiltersBtn" class="btn btn-solid-dark">Apply</button>
+</aside>
 
   <div class="grid-5">
 
@@ -337,6 +377,14 @@
     </div>
   </div>
 </section>
+<div class="pagination-container">
+  <span class="page-btn" id="prevPage">&lt;</span>
+
+  <div id="invpgbtn1" class="page-numbers">1</div>
+
+  <span class="page-btn" id="nextPage">&gt;</span>
+</div>
+
 
 <!-- ================= FOOTER ================= -->
 
@@ -407,16 +455,9 @@
     </span>
   </button>
 
-  <button id="openFilterBtn" class="floating-filter-toggle">
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <line x1="4" y1="6" x2="16" y2="6"></line>
-      <line x1="4" y1="12" x2="12" y2="12"></line>
-      <line x1="4" y1="18" x2="8" y2="18"></line>
-      <line x1="18" y1="9" x2="18" y2="21"></line>
-      <polyline points="15 18 18 21 21 18"></polyline>
-    </svg>
-    <span>Sort</span>
-  </button>
+ 
+
+  
 
   <div id="toastNotification" class="toast-notification">Item added to cart!</div>
 
