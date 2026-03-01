@@ -150,6 +150,7 @@ a { text-decoration: none; color: inherit; }
 .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 15px; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.grid-0 { display: none; }
 
 .product-card { position: relative; }
 .product-title { font-size: 1rem; font-weight: normal; margin-bottom: 5px; font-family: var(--font-heading); }
