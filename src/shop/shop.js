@@ -6,3 +6,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         
         
 })
+
+const checkout = async(reference, name, phone, address, order) => {
+        
+}
