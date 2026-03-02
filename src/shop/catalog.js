@@ -1,22 +1,16 @@
 import { supabase } from '../shared/scripts/supabase.js'
 
 window.addEventListener('DOMContentLoaded', async () => {
-        let refetch = false
-        let _ = localStorage.getItem("refresh")
-        let refresh = JSON.parse(_) || Date.now()
-        let catalog = JSON.parse(localStorage.getItem("catalog")) || [[]]
+        let catalog = [[]]
         let data, error;
-        if(!_ || Date.now() - refresh >= 24 * 60 * 60 * 1000) {
-                localStorage.setItem("refresh", JSON.stringify(refresh));
-                ({ data, error } = await supabase.from('Inventory').select('*'));
-        }
+        
+        ({ data, error } = await supabase.from('Inventory').select('*'));
         
         if(error) console.error("Order Error:", error.message)
         else {
                 if(data) for(let i = 0, o = 0; i < data.length; i += 4*3, o++) {
                         catalog[o] = data.slice(i, i+12)
                 }
-                localStorage.setItem("catalog", JSON.stringify(catalog))
                 
                 let pgidx = localStorage.getItem("pgidx") || 1
                 catalog.forEach((page, pagei) => {
@@ -25,29 +19,31 @@ window.addEventListener('DOMContentLoaded', async () => {
                         _page.className = `grid-${pagei+1==pgidx?5:0}`
                         page.forEach((product) => {
                                 _page.innerHTML +=
-                                        `<div class="product-card">`+
-                                        `       <a href="#" class="clickable-card">`+
-                                        `               <div class="img-wrapper">`+
-                                        `                       <img src="${product.image} alt=${product.name}">`+
-                                        `               </div>`+
-                                        `               <h3 class="product-title">${product.name}</h3>`+
-                                        `               <p class="product-price">`+
-                                        `                       <s class="old-price">₱${product.price}</s>`+
-                                        `                       <span class="actual-price">₱${product.final}</span>`+
-                                        `               </p>`+
-                                        `       </a>`+
-                                        `       <button class="btn btn-outline-dark add-to-cart">Add to basket</button>`+
-                                        `</div>`
+                                        `
+                                        <div class="product-card">
+                                               <a href="#" class="clickable-card">
+                                                       <div class="img-wrapper">
+                                                               <img src="${product.image}" alt="${product.name}">
+                                                       </div>
+                                                       <h3 class="product-title">${product.name}</h3>
+                                                       <p class="product-price">
+                                                                <span class="actual-price">₱${product.final}</span>
+                                                                ${product.discount?'<s class="old-price">(₱'+product.price+')</s>':""}
+                                                       </p>
+                                               </a>
+                                               <button class="btn btn-outline-dark add-to-cart">Add to basket</button>
+                                        </div>
+                                        `
                         })
                         document.getElementById("invct").appendChild(_page)
                 })
         }
+        
+        window.addToBasket = (_) => {
+                let basket = JSON.parse(localStorage.getItem("basket")) || []
+                
+                basket.push({ id: _, quantity: 1 })
+                
+                localStorage.setItem("basket", JSON.stringify(basket))
+        }
 })
-
-const addToBasket = (_) => {
-        let basket = JSON.parse(localStorage.getItem("basket")) || []
-        
-        basket.push({ id: _ })
-        
-        localStorage.setItem("basket", JSON.stringify(basket))
-}
