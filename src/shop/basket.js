@@ -8,7 +8,7 @@ const addToBasket = (_) => {
 }
 */
 
-// horizontal cards
+// bskct
 
 /*
 import { supabase } from '../shared/scripts/supabase.js'

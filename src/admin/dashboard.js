@@ -1,3 +1,5 @@
+import { supabase } from '../shared/scripts/supabase.js'
+
 const loginContainer = document.getElementById('loginContainer');
 const tabsContainer = document.getElementById('tabsContainer');
 const dashboardContent = document.getElementById('dashboardContent');
@@ -8,15 +10,7 @@ loginBtn.addEventListener('click', () => {
   const username = document.getElementById('username').value.trim();
   const password = document.getElementById('password').value.trim();
 
-  if(username === 's' && password === 's') {
-    loginContainer.style.display = 'none';   // hide login
-    tabsContainer.style.display = 'block';   // show buttons
-    dashboardContent.style.display = 'block';// show tab container
-
-    showTab('diagnostics');                  // show first tab
-  } else {
-    loginError.textContent = 'Invalid username or password!';
-  }
+  adminLogin(username, password)
 });
 
 // Function to switch tabs
@@ -32,3 +26,17 @@ function showTab(tabId) {
 document.querySelectorAll('.tabs button').forEach(btn => {
   btn.addEventListener('click', () => showTab(btn.dataset.tab));
 });
+
+async function adminLogin(email, password) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email,
+    password: password
+  })
+  if (error) alert("Access Denied: " + error.message)
+  else {
+    loginContainer.style.display = 'none';
+    tabsContainer.style.display = 'block';
+    dashboardContent.style.display = 'block';
+    showTab('diagnostics')
+  }
+}
