@@ -15,29 +15,6 @@ window.addEventListener('DOMContentLoaded', async () => {
         
         if(refetch) ({ data, error } = await supabase.from('Inventory').select('*'))
         
-        
-        
-        
-        
-        
-        
-        /*
-        let catalog = JSON.parse(localStorage.getItem("catalog"))
-        let data = null, error = null;
-        if(!catalog) {
-                catalog = [[]]
-        }
-        
-        ({ data, error } = await supabase.from('Inventory').select('*'))
-        */
-        
-        
-        
-        
-        
-        
-        
-        
         if(error) console.error("Order Error:", error.message)
         else {
                 if(data) for(let i = 0, o = 0; i < data.length; i += 4*3, o++) {
