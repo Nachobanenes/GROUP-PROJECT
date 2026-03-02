@@ -1770,7 +1770,7 @@ textarea.form-input {
 }
 
 .dashboard-table th {
-  padding: 15px 20px;
+  padding: 15px 55px;
   text-align: left;
   font-weight: 600;
   color: var(--text-main);
@@ -1800,8 +1800,9 @@ textarea.form-input {
 .dashboard-table td:nth-child(7),
 .dashboard-table th:nth-child(8),
 .dashboard-table td:nth-child(8) {
-  width: 1%;
+  width: 10%;
   padding: 10px 5px;
+  text-align: center;
 }
 
 /* Status Buttons */
@@ -1831,22 +1832,22 @@ textarea.form-input {
 }
 
 .btn-pending {
-  border-color: #f39c12;
-  color: #f39c12;
+  border-color: #a3a3a3;
+  color: #8a8a8a;
 }
 
 .btn-pending:hover {
-  background: #f39c12;
+  background: #a3a3a3;
   color: white;
 }
 
 .btn-processing {
-  border-color: #3498db;
-  color: #3498db;
+  border-color: #a71313;
+  color: #7e2507;
 }
 
 .btn-processing:hover {
-  background: #3498db;
+  background: #a71313;
   color: white;
 }
 
@@ -1864,6 +1865,7 @@ textarea.form-input {
 .btn-action-small {
   padding: 5px 10px !important;
   font-size: 0.75rem !important;
+
 }
 
 .metrics {
