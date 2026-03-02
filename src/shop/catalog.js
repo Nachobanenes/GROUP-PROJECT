@@ -1,19 +1,15 @@
 import { supabase } from '../shared/scripts/supabase.js'
 
 window.addEventListener('DOMContentLoaded', async () => {
-        
-        
-        
         let refetch = false
-        let refresh = JSON.parse(localStorage.getItem("refresh")) || Date.now()
+        let _ = localStorage.getItem("refresh")
+        let refresh = JSON.parse(_) || Date.now()
         let catalog = JSON.parse(localStorage.getItem("catalog")) || [[]]
         let data, error;
-        if(Date.now() - refresh >= 24 * 60 * 60 * 1000) {
-                localStorage.setItem("refresh", JSON.stringify(refresh))
-                refetch = true
+        if(!_ || Date.now() - refresh >= 24 * 60 * 60 * 1000) {
+                localStorage.setItem("refresh", JSON.stringify(refresh));
+                ({ data, error } = await supabase.from('Inventory').select('*'));
         }
-        
-        if(refetch) ({ data, error } = await supabase.from('Inventory').select('*'))
         
         if(error) console.error("Order Error:", error.message)
         else {

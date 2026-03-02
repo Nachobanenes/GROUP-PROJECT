@@ -1,32 +1,26 @@
-import { supabase } from '../shared/scripts/supabase.js'
-
 window.addEventListener('DOMContentLoaded', async () => {
         let refetch = false
-        let refresh = JSON.parse(localStorage.getItem("refresh")) || Date.now()
-        if(Date.now() - refresh >= 86400000) {
-                localStorage.setItem("refresh", JSON.stringify(Date.now()))
-                refetch = true
-        }
-        
-        let catalog = JSON.parse(localStorage.getItem("catalog"))
+        let _ = localStorage.getItem("refresh")
+        let refresh = JSON.parse(_) || Date.now()
+        let catalog = JSON.parse(localStorage.getItem("basket")) || [[]]
         let data, error;
-        if(!catalog || refetch) {
-                ({ data, error } = await supabase.from('Inventory').select('*'))
-                catalog = [[]]
+        if(!_ || Date.now() - refresh >= 24 * 60 * 60 * 1000) {
+                localStorage.setItem("refresh", JSON.stringify(refresh));
+                ({ data, error } = await supabase.from('Inventory').select('*'));
         }
         
         if(error) console.error("Order Error:", error.message)
         else {
-                for(i = 0, o = 0; i < data.length; i += 4*3, o++) {
+                if(data) for(let i = 0, o = 0; i < data.length; i += 4*3, o++) {
                         catalog[o] = data.slice(i, i+12)
                 }
                 localStorage.setItem("catalog", JSON.stringify(catalog))
                 
-                const dce = document.createElement
-                catalog.forEach((page) => {
-                        const _page = dce("div")
-                        _page.id = `invpg${page}`
-                        _page.class = "grid-0"
+                let pgidx = localStorage.getItem("pgidx") || 1
+                catalog.forEach((page, pagei) => {
+                        const _page = document.createElement("div")
+                        _page.id = `invpg${pagei}`
+                        _page.className = `grid-${pagei+1==pgidx?5:0}`
                         page.forEach((product) => {
                                 _page.innerHTML +=
                                         `<div class="product-card">`+
@@ -43,6 +37,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                                         `       <button class="btn btn-outline-dark add-to-cart">Add to basket</button>`+
                                         `</div>`
                         })
+                        document.getElementById("invct").appendChild(_page)
                 })
         }
 })
