@@ -31,7 +31,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                                                                 ${product.discount?'<s class="old-price">(₱'+product.price+')</s>':""}
                                                        </p>
                                                </a>
-                                               <button class="btn btn-outline-dark add-to-cart">Add to basket</button>
+                                               <button class="btn btn-outline-dark add-to-cart" onclick="addToBasket(${product.id})">Add to basket</button>
                                         </div>
                                         `
                         })

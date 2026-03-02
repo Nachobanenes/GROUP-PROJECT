@@ -83,7 +83,7 @@ window.refetch = async () => {
                 <td>${sale.phone || '-'}</td>
                 <td>${sale.reference || '-'}</td>
                 <td>${sale.date ? new Date(sale.date).toLocaleDateString() : '-'}</td>
-                <td>$${sale.total || 0}</td>
+                <td>${sale.total || 0}</td>
                 <td>${sale.address || '-'}</td>
                 <td>
                     <div class="status-buttons" style="display: flex; gap: 8px;">
@@ -129,11 +129,11 @@ const injectModal = () => {
 };
 
 window.viewOrderDetails = async (id) => {
-    injectModal();
+    injectModal(); //
     
     const { data, error } = await supabase
         .from('Sales')
-        .select('name, order, total, reference')
+        .select('*')
         .eq('id', id)
         .single();
 
@@ -144,21 +144,20 @@ window.viewOrderDetails = async (id) => {
 
     title.innerHTML = `Order Ref: ${data.reference}`;
     
-    // --- Error Fix: Ensure order is an array ---
+    // --- Safe Parse to fix the forEach error ---
     let items = [];
     try {
-        // If it's a string from the DB, parse it; otherwise use as is
         items = typeof data.order === 'string' ? JSON.parse(data.order) : data.order;
         if (!Array.isArray(items)) items = [items]; 
     } catch (e) {
         return alert("Data Error: Order JSON is not formatted correctly.");
     }
 
-    // Build the "Mini Inventory" Table
+    // Build the Mini Inventory Table (No symbols, clean columns)
     let itemsHtml = `
         <table style="width:100%; border-collapse: collapse; margin-top:20px; font-size:14px; text-align:left;">
             <thead>
-                <tr style="border-bottom: 2px solid #333; color:#111;">
+                <tr style="border-bottom: 2px solid #333;">
                     <th style="padding:10px;">ID</th>
                     <th style="padding:10px;">Name</th>
                     <th style="padding:10px;">Qty</th>
@@ -169,15 +168,15 @@ window.viewOrderDetails = async (id) => {
             <tbody>`;
 
     items.forEach(item => {
-        // Calculate line total: qty * final price
-        const qty = Number(item.qty || item.quantity || 0);
-        const final = Number(item.final || item.price || 0);
+        const qty = Number(item.qty || 0);
+        const final = Number(item.final || 0);
         const lineTotal = qty * final;
 
+        console.log(item.name, item.qty, item.final)
         itemsHtml += `
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding:10px;">${item.id || '-'}</td>
-                <td style="padding:10px; font-weight:bold;">${item.name || 'Unknown'}</td>
+                <td style="padding:10px; font-weight:bold;">${item.name || '---'}</td>
                 <td style="padding:10px;">${qty}</td>
                 <td style="padding:10px;">${final.toFixed(2)}</td>
                 <td style="padding:10px; text-align:right;">${lineTotal.toFixed(2)}</td>

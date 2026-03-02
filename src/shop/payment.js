@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                 if(basket.length == 0) { alert("You ordered nothing..."); return; }
                 const order = basket.map(item => ({
                         id: item.id,
-                        qty: item.qty
+                        qty: item.quantity
                 }))
                 
                 try {
@@ -30,3 +30,17 @@ window.addEventListener('DOMContentLoaded', async () => {
                 }
         }
 })
+
+window.getFullBasket = () => {
+    const raw = JSON.parse(localStorage.getItem('basket')) || [];
+    // Assuming 'inventoryData' is your global array from the Supabase fetch
+    return raw.map(item => {
+        const info = (window.inventoryData || []).find(i => i.id == item.id);
+        return {
+            id: Number(item.id),
+            name: info ? info.name : "Unknown",
+            qty: Number(item.quantity),
+            final: info ? Number(info.final) : 0
+        };
+    });
+};
