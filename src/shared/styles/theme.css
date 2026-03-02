@@ -1137,6 +1137,7 @@ a {
 .form-row {
   display: flex;
   gap: 20px;
+  margin: 20px;
 }
 
 .form-input {

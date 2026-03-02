@@ -54,38 +54,9 @@
       <!-- Cart Items -->
       <div class="cart-items">
         
-        <!-- Select All Checkbox -->
-        <div class="cart-select-controls">
-          <input type="checkbox" id="selectAllCheckbox" class="select-all-checkbox">
-          <label for="selectAllCheckbox">Select All</label>
-        </div>
-        
         <div id="bskct"></div>
         <script type="module" src="basket.js"></script>
         
-        <!-- Item 1 -->
-        <div class="cart-item">
-          <input type="checkbox" class="cart-item-checkbox" checked>
-          <div class="cart-item-image">
-            <img src="https://acigirlboutique.com/cdn/shop/files/ED509E1F-C2F2-4D43-A017-B5DF3904876C.jpg?v=1729088231&width=300" alt="Product">
-          </div>
-          <div class="cart-item-details">
-            <div class="cart-item-title">CCICCIBOORICCI Meowy KittyMas Stickers</div>
-            <div class="cart-item-category">Stickers</div>
-            <div class="cart-item-price">
-              <span class="price-current">₱50.00</span>
-              <span class="price-original">(₱60.00)</span>
-            </div>
-            <div class="cart-item-quantity">
-              <button class="quantity-btn">−</button>
-              <input type="number" class="quantity-input" value="1" readonly>
-              <button class="quantity-btn">+</button>
-            </div>
-          </div>
-          <button class="cart-item-remove">Remove</button>
-        </div>
-
-      
       </div>
 
       <!-- Cart Summary -->
@@ -93,18 +64,16 @@
         <div class="summary-title">Order Summary</div>
 
         <div class="summary-row">
-          <label>Subtotal:</label>
-          <span class="value">₱50.00</span>
+            <label>Subtotal:</label>
+            <span id="subtotal-val" class="value">₱0.00</span>
         </div>
-
         <div class="summary-row">
-          <label>Discount:</label>
-          <span class="value">-₱60.00</span>
+            <label>Discount:</label>
+            <span id="discount-val" class="value">₱0.00</span>
         </div>
-
         <div class="summary-row total">
-          <label>Total:</label>
-          <span class="value">₱50.00</span>
+            <label>Total:</label>
+            <span id="total-val" class="value">₱0.00</span>
         </div>
 
         <button class="checkout-btn">Proceed to Checkout</button>

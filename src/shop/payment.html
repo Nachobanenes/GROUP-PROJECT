@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="../shared/styles/theme.css">
 </head>
 <body>
-
   <div class="top-bar">Tag/Follow @acigirlboutique on facebook, instagram, & tiktok</div>
 
   <header class="header-main" id="mainHeader">
@@ -45,25 +44,33 @@
     
     <h1 style="text-align: left; font-size: 3.5rem; font-weight: normal; font-family: var(--font-heading); margin-bottom: 50px;">Payment Form</h1>
     
-    <form class="contact-form" action="#" method="POST">
       <div class="form-row">
-        <input type="text" name="refnum" placeholder="Reference No.*" required class="form-input">
-        <input type="tel" name="phone" placeholder="Mobile Number *" required class="form-input">
+        <input id="rf" type="text" name="refnum" placeholder="Reference No.*" required class="form-input">
+        <input id="mn" type="tel" name="phone" placeholder="Mobile Number *" required class="form-input">
         </div>
 
       <div class="form-row">
-        <input type="text" name="name" placeholder="Name*" required class="form-input">
+        <input id="nm" type="text" name="name" placeholder="Name*" required class="form-input">
         
-        <input type="address" name="address" placeholder="Address *" required class="form-input">
+        <input id="ad" type="address" name="address" placeholder="Address *" required class="form-input">
       </div>
 
-    
+    <!--
+      p_reference TEXT,
+  p_phone TEXT,
+  p_name TEXT,
+  p_address TEXT,
+  p_order JSONB
+    -->
        
-    
-      
   <script type="module" src="payment.js"></script>
-      <button type="submit" class="btn btn-solid-dark" style="padding: 15px 40px; font-size: 1rem; width: max-content;">Submit</button>
-    </form>
+    <button class="btn btn-solid-dark" style="padding: 15px 40px; font-size: 1rem; width: max-content;" onclick="checkout(
+      document.getElementById('rf').value,
+      document.getElementById('mn').value,
+      document.getElementById('nm').value,
+      document.getElementById('ad').value,
+      JSON.parse(localStorage.getItem('basket'))
+    )">Submit</button>  
 
   </section>
   
