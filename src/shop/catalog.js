@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', async () => {
                                         `<div class="product-card">`+
                                         `       <a href="#" class="clickable-card">`+
                                         `               <div class="img-wrapper">`+
-                                        `                       <img src="${product.image}">`+
+                                        `                       <img src="${product.image} alt=${product.name}">`+
                                         `               </div>`+
                                         `               <h3 class="product-title">${product.name}</h3>`+
                                         `               <p class="product-price">`+

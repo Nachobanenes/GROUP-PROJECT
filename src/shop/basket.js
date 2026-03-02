@@ -1,14 +1,6 @@
 window.addEventListener('DOMContentLoaded', async () => {
-        let refetch = false
-        let _ = localStorage.getItem("refresh")
-        let refresh = JSON.parse(_) || Date.now()
-        let catalog = JSON.parse(localStorage.getItem("basket")) || [[]]
-        let data, error;
-        if(!_ || Date.now() - refresh >= 24 * 60 * 60 * 1000) {
-                localStorage.setItem("refresh", JSON.stringify(refresh));
-                ({ data, error } = await supabase.from('Inventory').select('*'));
-        }
-        
+        const basket = JSON.parse(localStorage.getItem("basket"))
+        console.log(basket)
         if(error) console.error("Order Error:", error.message)
         else {
                 if(data) for(let i = 0, o = 0; i < data.length; i += 4*3, o++) {
