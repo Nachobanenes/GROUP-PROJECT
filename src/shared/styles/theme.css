@@ -1688,8 +1688,8 @@ textarea.form-input {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 60px 20px;
-  max-width: 90%;
+  padding: 60px 90px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -1793,6 +1793,77 @@ textarea.form-input {
 
 .dashboard-table tbody tr:last-child td {
   border-bottom: none;
+}
+
+/* Status and Action Column Width */
+.dashboard-table th:nth-child(7),
+.dashboard-table td:nth-child(7),
+.dashboard-table th:nth-child(8),
+.dashboard-table td:nth-child(8) {
+  width: 1%;
+  padding: 10px 5px;
+}
+
+/* Status Buttons */
+.status-buttons {
+  display: flex;
+  gap: 4px;
+  flex-wrap: nowrap;
+}
+
+.btn-status {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: white;
+  color: #666;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.btn-status:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
+}
+
+.btn-pending {
+  border-color: #f39c12;
+  color: #f39c12;
+}
+
+.btn-pending:hover {
+  background: #f39c12;
+  color: white;
+}
+
+.btn-processing {
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.btn-processing:hover {
+  background: #3498db;
+  color: white;
+}
+
+.btn-completed {
+  border-color: #27ae60;
+  color: #27ae60;
+}
+
+.btn-completed:hover {
+  background: #27ae60;
+  color: white;
+}
+
+/* Small Action Button */
+.btn-action-small {
+  padding: 5px 10px !important;
+  font-size: 0.75rem !important;
 }
 
 .metrics {

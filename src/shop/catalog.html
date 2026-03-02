@@ -1,124 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CCICCIBOORICCI - Aci Girl Boutique</title>
-  <link rel="stylesheet" href="/src/shared/styles/theme.css">
+  <link rel="stylesheet" href="../shared/styles/theme.css">
 </head>
 
 <body>
 
-<div class="top-bar">
-  Tag/Follow @acigirlboutique on facebook, instagram, & tiktok
-</div>
-
-<header class="header-main" id="mainHeader">
-
-  <div class="logo">
-    <a href="index.html" style="text-decoration:none;color:inherit;">
-      Aci Girl Boutique
-    </a>
+  <div class="top-bar">
+    Tag/Follow @acigirlboutique on facebook, instagram, & tiktok
   </div>
 
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li> 
-    <li><a href="items.html">Items</a></li> 
-    <li><a href="dashboard.html">Dashboard</a></li> 
-    <li><a href="Contact.html">Contact</a></li>
-  </ul>
+  <header class="header-main" id="mainHeader">
 
-  <div class="header-icons" style="position:relative;">
-
-    <!-- SEARCH -->
-    <svg id="searchBtn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="11" cy="11" r="8"/>
-      <path d="M21 21l-4.3-4.3"/>
-    </svg>
-
-    <div id="searchOverlay" class="search-overlay">
-      <input type="text" placeholder="Search products...">
-      <button id="closeSearchBtn">X</button>
+    <div class="logo">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        Aci Girl Boutique
+      </a>
     </div>
 
-    <!-- CART -->
-    <a href="Cart.html" class="cart-icon-link" style="color:inherit;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 01-8 0"/>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="items.html">Items</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+
+    <div class="header-icons" style="position: relative;">
+
+      <!-- SEARCH -->
+      <svg id="searchBtn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8" />
+        <path d="M21 21l-4.3-4.3" />
       </svg>
-      <span id="cartBadge" class="cart-badge">0</span>
-    </a>
 
-  </div>
-</header>
+      <div id="searchOverlay" class="search-overlay">
+        <input type="text" placeholder="Search products...">
+        <button id="closeSearchBtn">X</button>
+      </div>
 
+      <!-- CART -->
+      <a href="Cart.html" class="cart-icon-link" style="color: inherit;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        <span id="cartBadge" class="cart-badge">0</span>
+      </a>
 
-<!-- ================= PRODUCTS ================= -->
-
-<section class="container section-spacing ">
-
-  <div class="collection-header">
-<div class="products-wrapper">
-
-  <!-- ======== FILTER SIDEBAR ======== -->
-<aside class="filter-sidebar">
-  <h3>Filter & Sort</h3>
-
-  <!-- Availability -->
-  <div class="filter-section">
-    <p><strong>Availability</strong></p>
-    <label><input type="checkbox" id="inStock"> In stock</label><br>
-    <label><input type="checkbox" id="outOfStock"> Out of stock</label>
-  </div>
-
-  <!-- Price Range -->
-  <div class="filter-section">
-    <p><strong>Price Range (₱)</strong></p>
-    <div class="price-range-inputs">
-      <input type="number" id="priceFrom" placeholder="From" min="0" value="0">
-      <span>–</span>
-      <input type="number" id="priceTo" placeholder="To" min="0" value="500">
     </div>
-    <div class="price-range-sliders">
-      <input type="range" id="rangeFrom" min="0" max="500" value="0">
-      <input type="range" id="rangeTo" min="0" max="500" value="500">
+  </header>
+
+  <!-- ================= PRODUCTS ================= -->
+
+  <section class="container section-spacing">
+
+    <div class="collection-header">
+      <h1>CCICCIBOORICCI Collection</h1>
     </div>
-  </div>
 
-  <!-- Category -->
-  <div class="filter-section">
-    <p><strong>Category</strong></p>
-    <label><input type="radio" name="category" value="stickers"> Stickers</label><br>
-    <label><input type="radio" name="category" value="bracelets"> Bracelets</label><br>
-    <label><input type="radio" name="category" value="scrunchies"> Scrunchies</label>
-  </div>
+    <div class="products-wrapper">
 
-  <!-- Sort -->
-  <div class="filter-section">
-    <p><strong>Sort by</strong></p>
-    <label><input type="radio" name="sort" value="best-selling"> Best Selling</label><br>
-    <label><input type="radio" name="sort" value="price-low-high"> Price: Low to High</label><br>
-    <label><input type="radio" name="sort" value="price-high-low"> Price: High to Low</label><br>
-    <label><input type="radio" name="sort" value="alphabetical"> Alphabetical</label>
-  </div>
+      <!-- ======== FILTER SIDEBAR ======== -->
+      <aside class="filter-sidebar">
+        <h3>Filter & Sort</h3>
 
-  <button id="applyFiltersBtn" class="btn btn-solid-dark">Apply</button>
-</aside>
+        <!-- Availability -->
+        <div class="filter-section">
+          <p><strong>Availability</strong></p>
+          <label><input type="checkbox" id="inStock"> In stock</label><br>
+          <label><input type="checkbox" id="outOfStock"> Out of stock</label>
+        </div>
 
-  <div id="invct"></div>
-  
-<!-- ================= FOOTER ================= -->
+        <!-- Price Range -->
+        <div class="filter-section">
+          <p><strong>Price Range (₱)</strong></p>
+          <div class="price-range-inputs">
+            <input type="number" id="priceFrom" placeholder="From" min="0" value="0">
+            <span>–</span>
+            <input type="number" id="priceTo" placeholder="To" min="0" value="500">
+          </div>
+        </div>
 
-<footer class="site-footer reveal-on-scroll">
+        <!-- Category -->
+        <div class="filter-section">
+          <p><strong>Category</strong></p>
+          <label><input type="checkbox" id="stickers"> Stickers</label><br>
+          <label><input type="checkbox" id="bracelets"> Bracelets</label><br>
+          <label><input type="checkbox" id="scrunchies"> Scrunchies</label>
+        </div>
+
+        <!-- Sort -->
+        <div class="filter-section">
+          <p><strong>Sort by</strong></p>
+          <label><input type="radio" name="sort" value="price-low-high"> Price: Low to High</label><br>
+          <label><input type="radio" name="sort" value="price-high-low"> Price: High to Low</label><br>
+          <label><input type="radio" name="sort" value="alphabetical"> Alphabetical</label>
+        </div>
+
+        <button id="applyFiltersBtn" class="btn btn-solid-dark">Apply</button>
+      </aside>
+
+      <!-- PRODUCTS GRID -->
+       <div id="invct"></div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer reveal-on-scroll">
     <h2>Aci Girl Boutique x HUB: Make Lab</h2>
-    <p>Store Hours: Mon-Thu: 10am-6pm & Fri-Sun: 10am-7pm</p>
+    <p>Store Hours: Monday-Thursday: 10am-6pm & Fri-Sun: 10am-7pm</p>
     <p>Space01 HUB Make Lab, First United Bldg. 413 Escolta, Manila</p>
     <p class="footer-promo">Follow @acigirlboutique to get the latest updates, promos, & POP-UP Shopping Sched!</p>
-    <div class="footer-bottom"><p>&copy; 2026, Aci Girl Boutique</p></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026, Aci Girl Boutique</p>
+    </div>
   </footer>
 
+  <!-- FILTER OVERLAY -->
   <div id="filterOverlay" class="filter-overlay"></div>
   <div id="filterPanel" class="filter-panel">
     <div class="filter-panel-header">
@@ -132,8 +138,8 @@
           <a href="#" class="reset-link" id="resetAvailability">Reset</a>
         </div>
         <div class="checkbox-group">
-          <label><input type="checkbox" id="inStock"> In stock</label>
-          <label><input type="checkbox" id="outOfStock"> Out of stock</label>
+          <label><input type="checkbox" id="inStockModal"> In stock</label>
+          <label><input type="checkbox" id="outOfStockModal"> Out of stock</label>
         </div>
       </div>
       <div class="filter-section">
@@ -141,22 +147,32 @@
           <label>Price</label>
           <a href="#" class="reset-link" id="resetPrice">Reset</a>
         </div>
-        <p class="price-hint">The highest price is ₱150.00</p>
+        <p class="price-hint">The highest price is ₱500.00</p>
         <div class="price-inputs">
           <div class="input-wrapper">
             <span>₱</span>
-            <input type="number" id="priceFrom" placeholder="From" min="0">
+            <input type="number" id="priceFromModal" placeholder="From" min="0">
           </div>
           <div class="input-wrapper">
             <span>₱</span>
-            <input type="number" id="priceTo" placeholder="To" min="0">
+            <input type="number" id="priceToModal" placeholder="To" min="0">
           </div>
+        </div>
+      </div>
+      <div class="filter-section">
+        <div class="filter-section-header">
+          <label>Category</label>
+          <a href="#" class="reset-link" id="resetCategory">Reset</a>
+        </div>
+        <div class="checkbox-group">
+          <label><input type="checkbox" id="stickersModal"> Stickers</label>
+          <label><input type="checkbox" id="braceletsModal"> Bracelets</label>
+          <label><input type="checkbox" id="scrunchiesModal"> Scrunchies</label>
         </div>
       </div>
       <div class="filter-section">
         <label>Sort by</label>
         <select id="sortSelect">
-          <option>Best selling</option>
           <option>Alphabetically, A-Z</option>
           <option>Alphabetically, Z-A</option>
           <option>Price, low to high</option>
@@ -167,24 +183,25 @@
       </div>
     </div>
     <div class="filter-panel-footer">
-      <button id="applyFiltersBtn" class="btn btn-solid-dark" style="width: 100%; border-radius: 4px;">Apply</button>
+      <button id="applyFiltersModalBtn" class="btn btn-solid-dark" style="width: 100%; border-radius: 4px;">Apply</button>
     </div>
   </div>
 
+  <!-- CHAT BUTTON -->
   <button class="chat-btn" id="chatBtn">
     <span class="chat-icon-wrapper" id="chatIconWrapper">
-      <svg class="chat-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+      <svg class="chat-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
+      </svg>
       <span class="chat-text" id="chatText">Chat</span>
     </span>
   </button>
 
- 
-
-  
-
+  <!-- TOAST NOTIFICATION -->
   <div id="toastNotification" class="toast-notification">Item added to cart!</div>
 
-<script src="Js/Script.js"></script>
+  <script src="Js/Script.js"></script>
 
 </body>
+
 </html>
