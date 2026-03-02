@@ -195,7 +195,7 @@ a {
   display: flex;
   gap: 25px;
   list-style: none;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .nav-links a:hover {
@@ -1978,7 +1978,7 @@ textarea.form-input {
    ========================================= */
 .qr-card {
   background: #ffffff;
-  padding: 20px;
+  padding: 22px;
   border-radius: 14px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   text-align: center;
